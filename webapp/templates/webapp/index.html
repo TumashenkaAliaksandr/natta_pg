@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Пластик групп - NАTTA PG</title>
+    <link rel="stylesheet" href="{% static 'webapp/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'webapp/css/mobile.css' %}" media="screen and (max-width: 768px)" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Логотип должен быть с идеей пластика, здесь пример простого SVG как заглушка -->
+            <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Логотип NАTTA PG">
+                <circle cx="50" cy="50" r="48" stroke="#FF0000" stroke-width="4" />
+                <path d="M30 60 L50 30 L70 60 Z" fill="#FFCC00" />
+                <text x="50%" y="85" text-anchor="middle" fill="#000" font-family="Arial" font-size="16">NАTTA PG</text>
+            </svg>
+        </div>
+        <h1>Пластик групп</h1>
+        <p>Изделия из полимеров для строительства</p>
+    </header>
+
+    <main>
+        <section class="products-overview">
+            <h2>Наша продукция</h2>
+            <ul>
+                <li>Дюбеля</li>
+                <li>Распределительные коробки</li>
+                <li>Клин и фиксатор для укладки плитки</li>
+                <li>Заглушки и прочее</li>
+            </ul>
+        </section>
+
+        <section class="contact">
+            <h2>Связаться с нами</h2>
+            <p>Для сотрудничества и заказа обращайтесь:</p>
+            <address>
+                Телефон: +7 (XXX) XXX-XX-XX<br/>
+                Email: info@nattapg.ru
+            </address>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Пластик групп. Все права защищены.</p>
+    </footer>
+</body>
+</html>

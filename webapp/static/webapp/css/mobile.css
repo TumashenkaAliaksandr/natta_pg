@@ -1,0 +1,23 @@
+/* Адаптивность для мобильных */
+
+body {
+    font-size: 16px;
+}
+
+header {
+    padding: 15px 5px;
+}
+
+.products-overview {
+    padding: 10px;
+    font-size: 1em;
+}
+
+.products-overview li {
+    font-size: 1em;
+}
+
+.contact {
+    font-size: 1em;
+    padding: 0 10px;
+}

@@ -1,0 +1,79 @@
+/* Основные цвета */
+:root {
+    --red: #FF0000;
+    --yellow: #FFCC00;
+    --black: #000000;
+    --white: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+header {
+    background-color: var(--red);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 10px;
+}
+
+header h1 {
+    margin: 10px 0 5px;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin: 5px 0 15px;
+}
+
+.logo svg {
+    margin: 0 auto;
+    display: block;
+}
+
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.products-overview {
+    background-color: var(--yellow);
+    padding: 15px;
+    border-radius: 8px;
+    color: var(--black);
+    margin-bottom: 40px;
+}
+
+.products-overview h2 {
+    margin-top: 0;
+    font-weight: 700;
+}
+
+.products-overview ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.products-overview li {
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+.contact {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9em;
+}
