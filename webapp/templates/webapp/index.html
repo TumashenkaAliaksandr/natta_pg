@@ -1,51 +1,192 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Пластик групп - NАTTA PG</title>
-    <link rel="stylesheet" href="{% static 'webapp/css/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'webapp/css/mobile.css' %}" media="screen and (max-width: 768px)" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Пластик групп - NATTA PG</title>
+    <!-- Подключите FontAwesome иконки в <head> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'webapp/css/style.css' %}"/>
 </head>
 <body>
-    <header>
+
+
+<header class="header">
+    <div class="container header__container">
         <div class="logo">
-            <!-- Логотип должен быть с идеей пластика, здесь пример простого SVG как заглушка -->
-            <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Логотип NАTTA PG">
-                <circle cx="50" cy="50" r="48" stroke="#FF0000" stroke-width="4" />
-                <path d="M30 60 L50 30 L70 60 Z" fill="#FFCC00" />
-                <text x="50%" y="85" text-anchor="middle" fill="#000" font-family="Arial" font-size="16">NАTTA PG</text>
-            </svg>
+            <img src="{% static 'webapp/img/logo_natta_pg.png' %}" alt="NATTA PG Логотип"/>
         </div>
-        <h1>Пластик групп</h1>
-        <p>Изделия из полимеров для строительства</p>
-    </header>
 
-    <main>
-        <section class="products-overview">
-            <h2>Наша продукция</h2>
-            <ul>
-                <li>Дюбеля</li>
-                <li>Распределительные коробки</li>
-                <li>Клин и фиксатор для укладки плитки</li>
-                <li>Заглушки и прочее</li>
+        <!-- Бургер чекбокс -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
+        <label for="menu-toggle" class="menu-icon" aria-label="Переключить меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <!-- Верхнее меню с поиском, телефонами, соцсетями и кнопкой -->
+        <div class="top-right-menu">
+            <div class="header-search">
+                <input type="text" placeholder="Поиск..." aria-label="Поиск по сайту"/>
+                <button aria-label="Искать"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-contacts">
+                <a href="tel:+74951234567" aria-label="Позвонить" class="contact-item">
+                    <i class="fas fa-phone-alt"></i> +7 (495) 123-45-67
+                </a>
+                <a href="mailto:info@example.com" aria-label="Написать email" class="contact-item">
+                    <i class="fas fa-envelope"></i> info@example.com
+                </a>
+            </div>
+            <div class="header-socials">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter" rel="noopener"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" rel="noopener"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <a href="tel:+74951234567" class="call-button">🕭 Заказать звонок</a> <!-- Новая кнопка -->
+        </div>
+
+        <!-- Выезжающее слева меню -->
+        <nav class="nav">
+            <ul class="nav__list">
+                <li><a href="#" class="nav__link active">Главная</a></li>
+                <li><a href="#products" class="nav__link">Продукция</a></li>
+                <li><a href="#about" class="nav__link">О компании</a></li>
+                <li><a href="#contacts" class="nav__link">Контакты</a></li>
+                <li><a href="#news" class="nav__link">Новости</a></li>
+                <li><a href="#faq" class="nav__link">Вопросы</a></li>
+                <li><a href="#partners" class="nav__link">Партнёры</a></li>
             </ul>
-        </section>
+            <a href="tel:+74951234567" class="call-button call-button--menu">Заказать звонок</a>
+            <!-- Кнопка внизу меню -->
+        </nav>
+    </div>
+</header>
 
-        <section class="contact">
-            <h2>Связаться с нами</h2>
-            <p>Для сотрудничества и заказа обращайтесь:</p>
+
+<main>
+    <section class="hero">
+        <div class="container hero__content">
+            <h1 class="hero__title">
+                NATTA PG — Изделия из полимеров высокого качества для строительства
+            </h1>
+            <p class="hero__subtitle">
+                Дюбеля, распределительные коробки, клин и фиксатор для укладки плитки, заглушки и многое другое.
+            </p>
+            <a href="#products" class="btn btn-primary">Посмотреть продукты</a>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Наша продукция</h2>
+            <div class="products__grid">
+                <!-- Пример карточки товара -->
+                <article class="product-card">
+                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-card__image"/>
+                    <h3 class="product-card__title">Дюбель</h3>
+                    <p class="product-card__desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                </article>
+                <article class="product-card">
+                    <img src="{% static 'images/product-kraska.jpg' %}" alt="Распределительные коробки"
+                         class="product-card__image"/>
+                    <h3 class="product-card__title">Распределительные коробки</h3>
+                    <p class="product-card__desc">Компактные и долговечные коробки для электрики.</p>
+                </article>
+                <!-- Добавить остальные продукты аналогично -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">О Пластик групп</h2>
+            <p>
+                Пластик групп — ведущий производитель изделий из полимеров для строительства. Мы предлагаем
+                инновационные и качественные решения для строительных организаций и специализированных магазинов.
+            </p>
+        </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
             <address>
-                Телефон: +7 (XXX) XXX-XX-XX<br/>
-                Email: info@nattapg.ru
+                <p>Адрес: г. Москва, ул. Примерная, д. 1</p>
+                <p>Телефон: +7 (495) 123-45-67</p>
+                <p>Email: info@plastikgroup.ru</p>
             </address>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
 
-    <footer>
-        <p>&copy; 2025 Пластик групп. Все права защищены.</p>
-    </footer>
+<footer class="footer">
+    <div class="container footer__container">
+        <div class="footer-content">
+
+            <!-- Логотип -->
+            <div class="footer-logo">
+                <a href="/">
+                    <img src="{% static 'webapp/img/logo_natta_pg.png' %}" alt="Пластик групп Логотип"/>
+                </a>
+            </div>
+
+            <!-- Адрес -->
+            <address class="footer-address">
+                123456, Москва, ул. Примерная, д. 1
+            </address>
+
+            <!-- Основное меню -->
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#" class="footer-link">Главная</a></li>
+                    <li><a href="#products" class="footer-link">Продукция</a></li>
+                    <li><a href="#about" class="footer-link">О компании</a></li>
+                    <li><a href="#contacts" class="footer-link">Контакты</a></li>
+                    <li><a href="#news" class="footer-link">Новости</a></li>
+                </ul>
+            </nav>
+
+            <!-- Социальные сети -->
+            <div class="footer-socials">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter" rel="noopener"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" rel="noopener"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+
+        </div>
+
+        <p class="footer-copyright">
+            © 2025 Пластик групп. Все права защищены.
+        </p>
+    </div>
+</footer>
+
+
+<script src="{% static 'webapp/js/main.js' %}"></script>
+
+<script>
+    // Скрипт для мобильного меню
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('nav--active');
+    });
+</script>
 </body>
 </html>

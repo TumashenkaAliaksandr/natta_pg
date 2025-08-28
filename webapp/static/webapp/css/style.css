@@ -1,79 +1,529 @@
-/* Основные цвета */
-:root {
-    --red: #FF0000;
-    --yellow: #FFCC00;
-    --black: #000000;
-    --white: #FFFFFF;
-}
-
+/* Сброс и базовые параметры */
 body {
+    background-color: #2E1B18; /* насыщенный глубокий темно-коричневый */
+    color: #F1FAEE; /* теплый светлый цвет текста */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: var(--white);
-    color: var(--black);
+    padding: 0;
+    scroll-behavior: smooth;
 }
 
+/* Header с градиентом ярких испанских цветов */
 header {
-    background-color: var(--red);
-    color: var(--white);
-    text-align: center;
-    padding: 20px 10px;
+    background: linear-gradient(135deg, #2E1B18 0%, /* темный шоколад */ #cc333e 45%, /* основной яркий красный */ #f4bf61 85% /* теплый желтый акцент */);
+    padding: 1.2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 30px rgba(230, 57, 70, 0.65);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: saturate(180%) blur(12px);
+    transition: background 0.4s ease;
+    flex-wrap: nowrap;
 }
 
-header h1 {
-    margin: 10px 0 5px;
-    font-weight: 700;
+/* Контейнер в хедере */
+.header__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.header-contacts {
+  display: flex;
+  gap: 1.8rem;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
-header p {
-    font-size: 1.2em;
-    font-weight: 300;
-    margin: 5px 0 15px;
+.header-contacts a {
+  color: #f4a261;
+  text-decoration: none;
+  position: relative;
+  padding: 0.3rem 0.8rem;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #e07c53, #b34a2f);
+  box-shadow:
+    0 2px 4px #83341a,
+    inset 0 -4px 6px #ffb972;
+  transition: color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  user-select: none;
+  text-shadow:
+    1px 1px 2px #7a3d21,
+    0 0 5px #ffb972;
 }
 
-.logo svg {
-    margin: 0 auto;
+/* Светящийся эффект при наведении */
+.header-contacts a:hover {
+  color: #e63946;
+  background: linear-gradient(145deg, #ffb77b, #ff9248);
+  box-shadow:
+    0 0 15px #ff9f3f,
+    inset 0 0 12px #ffdca8,
+    0 0 20px #ff9f3f;
+  text-shadow:
+    1px 1px 6px #ffbb62,
+    0 0 10px #ffbb62;
+}
+
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.8rem;
+  border: 2px solid #e58a54;
+  border-radius: 12px;
+  color: #e7e7e7;
+  text-decoration: none;
+  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 5px rgba(231, 231, 231, 0.4);
+  user-select: none;
+}
+
+.contact-item i {
+  font-size: 1.2rem;
+  color: #f4a261; /* теплый акцент */
+  transition: color 0.3s ease;
+}
+
+.contact-item:hover {
+  color: #751c2c;
+  border-color: #f4a261;
+  box-shadow: 0 0 12px #f4a261;
+}
+
+.contact-item:hover i {
+  color: #e63946; /* яркий акцент на иконке при ховере */
+}
+
+
+/* Логотип и бургер */
+.logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    height: 70px;
+
+    filter:
+      drop-shadow(0 0 6px #F4A261)
+      drop-shadow(0 0 12px #E63946)
+      drop-shadow(0 0 18px #F4A261)
+      drop-shadow(0 0 24px #E63946);
+
+    animation: slowFireGlow 8s infinite ease-in-out;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+@keyframes slowFireGlow {
+    0%, 100% {
+        filter:
+          drop-shadow(0 0 6px #F4A261)
+          drop-shadow(0 0 12px #E63946)
+          drop-shadow(0 0 18px #F4A261)
+          drop-shadow(0 0 24px #E63946);
+        transform: scale(1);
+    }
+    50% {
+        filter:
+          drop-shadow(0 0 12px #F4A261)
+          drop-shadow(0 0 25px #E63946)
+          drop-shadow(0 0 35px #F4A261)
+          drop-shadow(0 0 45px #E63946);
+        transform: scale(1.03);
+    }
+}
+
+
+/* Иконка бургера */
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 32px;
+    height: 26px;
+    justify-content: space-between;
+    z-index: 1101;
+    position: relative;
+    left: 50px;
+}
+
+.menu-icon span {
     display: block;
+    height: 4px;
+    background-color: #ffcca3;
+    border-radius: 2px;
+    transition: all 0.4s ease;
 }
 
-main {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 0 20px;
+/* Боковое меню слева */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 320px;
+    background-color: #3b2724; /* чуть светлее темного */
+    padding: 5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    box-shadow: 2px 0 18px rgba(230, 57, 70, 0.8);
+    z-index: 1100;
+    overflow-y: auto;
 }
 
-.products-overview {
-    background-color: var(--yellow);
-    padding: 15px;
-    border-radius: 8px;
-    color: var(--black);
-    margin-bottom: 40px;
+.menu-toggle:checked ~ .nav {
+    transform: translateX(0);
 }
 
-.products-overview h2 {
-    margin-top: 0;
-    font-weight: 700;
-}
-
-.products-overview ul {
+/* Пункты меню */
+.nav__list {
     list-style: none;
-    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
-.products-overview li {
-    margin: 8px 0;
+.nav__link {
+    color: #F4A261;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav__link:hover,
+.nav__link.active {
+    color: #E63946;
+    border-color: #E63946;
+}
+
+/* Верхнее меню справа */
+.top-right-menu {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    min-width: 350px;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+
+/* Поиск */
+.header-search {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.header-search input {
+    padding: 0.49rem 0.8rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    width: 180px;
+    background-color: #5c3c36;
+    color: #F4A261;
+    transition: width 0.4s ease;
+}
+
+.header-search input:focus {
+    width: 240px;
+    background-color: #7e534b;
+}
+
+.header-search button {
+    padding: 0.3rem 0.4rem;
+    background: none;
+    border: 2px solid #f7b687;
+    border-radius: 10px;
+    color: #f7b687;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-search button:hover {
+    background-color: #ffdec3;
+    color: #3b2724;
+}
+
+/* Телефоны */
+.header-contacts {
+    display: flex;
+    gap: 2rem;
     font-weight: 600;
+    font-size: 1.1rem;
 }
 
-.contact {
-    text-align: center;
-    font-size: 1.1em;
+.header-contacts a {
+    color: #e7e7e7;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-footer {
-    background-color: var(--black);
-    color: var(--white);
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 0.9em;
+
+/* Социальные сети */
+.header-socials {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.header-socials a {
+    color: #e7e7e7;
+    transition: color 0.3s ease;
+}
+
+.header-socials a:hover {
+    color: #E63946;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 900px) {
+    .top-right-menu {
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .header__container {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-right: 0.5rem;
+    }
+}
+/* Общие стили кнопки "Заказать звонок" */
+.call-button {
+  background: linear-gradient(145deg, #cc4a3e, #ffb955);
+  padding: 0.75rem 2.2rem;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow:
+    0 8px 10px rgba(204, 74, 62, 0.8),  /* глубокая внешняя тень */
+    0 0 12px #ffbc57,                    /* яркий световой ореол */
+    inset 0 5px 20px #ffdd99;            /* внутреннее свечение */
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  user-select: none;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    text-decoration: none;
+}
+
+.call-button i {
+  font-size: 1.3rem;
+  color: #fff7d9;
+  transition: color 0.25s ease;
+}
+
+.call-button:hover {
+  box-shadow:
+    0 12px 22px rgba(255, 185, 95, 0.9),
+    0 0 20px #ffce5d,
+    inset 0 8px 25px #fff1b8;
+  transform: translateY(-3px);
+}
+
+.call-button:hover i {
+  color: #ffb931;
+}
+
+.call-button:active {
+  box-shadow:
+    inset 0 4px 15px rgba(204, 74, 62, 0.9),
+    0 0 6px rgba(204, 74, 62, 0.5);
+  transform: translateY(1px);
+}
+
+/*.call-button {*/
+/*  display: inline-block;*/
+/*  background: linear-gradient(45deg, #ffcb6d, #E63946);*/
+/*  color: #fff;*/
+/*  padding: 0.7rem 1.5rem;*/
+/*  border-radius: 5px;*/
+/*  font-weight: 700;*/
+/*  font-size: 1rem;*/
+/*  text-decoration: none;*/
+/*  cursor: pointer;*/
+/*  box-shadow:*/
+/*    0 4px 12px rgba(230, 57, 70, 1.1),*/
+/*    0 0 8px rgba(244, 162, 97, 1);*/
+/*  transition: background 0.3s ease, box-shadow 0.3s ease;*/
+/*  white-space: nowrap;*/
+/*  user-select: none;*/
+/*}*/
+
+/*!* Эффект при наведении *!*/
+/*.call-button:hover {*/
+/*  background: linear-gradient(45deg, #E63946, #ffab14);*/
+/*  box-shadow:*/
+/*    0 6px 18px rgba(244, 162, 97, 0.8),*/
+/*    0 0 18px rgba(230, 57, 70, 0.9);*/
+/*  color: #fff;*/
+/*}*/
+
+/* Особая позиция для кнопки в меню (нижняя часть) */
+.call-button--menu {
+  margin-top: auto;
+  padding: 1rem 2rem;
+  width: 100%;
+  text-align: center;
+  display: block;
+  border-radius: 18px;
+  font-size: 1.2rem;
+}
+
+/* Расположение кнопки в верхнем меню справа */
+.top-right-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+
+
+/* Футер с градиентом */
+.footer {
+    background: linear-gradient(
+      90deg,
+      #2E1B18 0%,
+      #E63946 40%,
+      #F4A261 70%
+    );
+    color: #F1FAEE;
+    padding: 2.5rem 3rem;
+    box-shadow: inset 0 8px 12px -8px rgba(230, 57, 70, 0.6);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    user-select: none;
+    border-top: 2px solid #B7373B;
+    transition: background-color 0.4s ease;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Логотип футера */
+.footer-logo {
+    flex: 0 0 auto;
+}
+
+.footer-logo img {
+    height: 70px;
+    filter: drop-shadow(0 0 16px #F4A261);
+    transition: transform 0.3s ease;
+}
+
+.footer-logo img:hover {
+    transform: scale(1.08);
+}
+
+/* Контент футера справа */
+.footer-content-right {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 4rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Адрес в футере */
+.footer-address {
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+    user-select: text;
+    max-width: 300px;
+    align-self: center;
+    color: #F1FAEE;
+}
+
+/* Меню футера */
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    padding-left: 0;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-link {
+    color: #F4A261;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.footer-link:hover {
+    color: #E63946;
+    text-decoration: underline;
+}
+
+/* Соцсети в футере */
+.footer-socials {
+    display: flex;
+    gap: 1.8rem;
+    font-size: 1.6rem;
+    align-items: center;
+}
+
+.footer-socials a {
+    color: #F4A261;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #E63946;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+    .footer__container {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    .footer-content-right {
+        justify-content: center;
+        gap: 2rem;
+    }
+    .footer-nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .footer-address {
+        max-width: 100%;
+        text-align: center;
+        color: #F1FAEE;
+    }
 }
