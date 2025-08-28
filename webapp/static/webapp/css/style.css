@@ -1,6 +1,6 @@
 /* Сброс и базовые параметры */
 body {
-    background-color: #2E1B18; /* насыщенный глубокий темно-коричневый */
+    background-color: beige; /* насыщенный глубокий темно-коричневый */
     color: #F1FAEE; /* теплый светлый цвет текста */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -10,7 +10,7 @@ body {
 
 /* Header с градиентом ярких испанских цветов */
 header {
-    background: linear-gradient(135deg, #2E1B18 0%, /* темный шоколад */ #cc333e 45%, /* основной яркий красный */ #f4bf61 85% /* теплый желтый акцент */);
+    background: linear-gradient(135deg, #2e1b18 0%, /* темный шоколад */ #f12222 45%, /* основной яркий красный */ #f4bf61 85% /* теплый желтый акцент */);
     padding: 1.2rem 3rem;
     display: flex;
     align-items: center;
@@ -39,33 +39,24 @@ header {
 }
 
 .header-contacts a {
-  color: #f4a261;
-  text-decoration: none;
-  position: relative;
-  padding: 0.3rem 0.8rem;
-  border-radius: 10px;
-  background: linear-gradient(145deg, #e07c53, #b34a2f);
-  box-shadow:
-    0 2px 4px #83341a,
-    inset 0 -4px 6px #ffb972;
-  transition: color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-  user-select: none;
-  text-shadow:
-    1px 1px 2px #7a3d21,
-    0 0 5px #ffb972;
+    color: #f4a261;
+    text-decoration: none;
+    position: relative;
+    padding: 0.3rem 0.8rem;
+    border-radius: 7px;
+    background: linear-gradient(145deg, #ff1e03, #812925);
+    box-shadow: 0 2px 4px #83341a, inset 0 -4px 6px #e77439;
+    transition: color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    user-select: none;
+    text-shadow: 1px 1px 2px #7a3d21, 0 0 5px #ffb972;
 }
 
 /* Светящийся эффект при наведении */
 .header-contacts a:hover {
-  color: #e63946;
-  background: linear-gradient(145deg, #ffb77b, #ff9248);
-  box-shadow:
-    0 0 15px #ff9f3f,
-    inset 0 0 12px #ffdca8,
-    0 0 20px #ff9f3f;
-  text-shadow:
-    1px 1px 6px #ffbb62,
-    0 0 10px #ffbb62;
+    color: #e63946;
+    background: linear-gradient(145deg, #e9ddd4, #ed9d52);
+    box-shadow: 0 0 15px #ff9f3f, inset 0 0 12px #ffdca8, 0 0 7px #ff9f3f;
+    text-shadow: 1px 1px 6px #ffbb62, 0 0 10px #ffbb62;
 }
 
 
@@ -158,7 +149,7 @@ header {
 .menu-icon span {
     display: block;
     height: 4px;
-    background-color: #ffcca3;
+    background-color: #f4a261;
     border-radius: 2px;
     transition: all 0.4s ease;
 }
@@ -234,13 +225,12 @@ header {
     font-size: 1rem;
     outline: none;
     width: 180px;
-    background-color: #5c3c36;
+    background-color: #f4bf6159;
     color: #F4A261;
     transition: width 0.4s ease;
 }
 
 .header-search input:focus {
-    width: 240px;
     background-color: #7e534b;
 }
 
@@ -314,7 +304,7 @@ header {
 .call-button {
   background: linear-gradient(145deg, #cc4a3e, #ffb955);
   padding: 0.75rem 2.2rem;
-  border-radius: 10px;
+  border-radius: 7px;
   color: #fff;
   font-weight: 700;
   font-size: 1.1rem;
