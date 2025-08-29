@@ -62,14 +62,15 @@
                 <img src="{% static 'webapp/img/logo_natta_pg.png' %}" alt="NATTA PG Логотип"/>
             </div>
             <ul class="nav__list">
-                <li><a href="#" class="nav__link active">Главная</a></li>
-                <li><a href="#products" class="nav__link">Продукция</a></li>
-                <li><a href="#about" class="nav__link">О компании</a></li>
-                <li><a href="#contacts" class="nav__link">Контакты</a></li>
-                <li><a href="#news" class="nav__link">Новости</a></li>
-                <li><a href="#faq" class="nav__link">Вопросы</a></li>
-                <li><a href="#partners" class="nav__link">Партнёры</a></li>
+                <li><a href="#" class="nav__link active"><i class="fas fa-flag"></i> Главная</a></li>
+                <li><a href="#products" class="nav__link"><i class="fas fa-shopping-bag"></i> Продукция</a></li>
+                <li><a href="#about" class="nav__link"><i class="fas fa-info-circle"></i> О компании</a></li>
+                <li><a href="#contacts" class="nav__link"><i class="fas fa-phone"></i> Контакты</a></li>
+                <li><a href="#news" class="nav__link"><i class="fas fa-newspaper"></i> Новости</a></li>
+                <li><a href="#faq" class="nav__link"><i class="fas fa-question-circle"></i> Вопросы</a></li>
+                <li><a href="#partners" class="nav__link"><i class="fas fa-handshake"></i> Партнёры</a></li>
             </ul>
+
             <a href="tel:+74951234567" class="call-button call-button--menu">Заказать звонок</a>
             <!-- Кнопка внизу меню -->
         </nav>
@@ -78,60 +79,157 @@
 
 
 <main>
-    <section class="hero">
-        <div class="container hero__content">
-            <h1 class="hero__title">
-                NATTA PG — Изделия из полимеров высокого качества для строительства
-            </h1>
-            <p class="hero__subtitle">
-                Дюбеля, распределительные коробки, клин и фиксатор для укладки плитки, заглушки и многое другое.
-            </p>
-            <a href="#products" class="btn btn-primary">Посмотреть продукты</a>
-        </div>
-    </section>
 
-    <section id="products" class="products">
-        <div class="container">
-            <h2 class="section-title">Наша продукция</h2>
-            <div class="products__grid">
-                <!-- Пример карточки товара -->
-                <article class="product-card">
-                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-card__image"/>
-                    <h3 class="product-card__title">Дюбель</h3>
-                    <p class="product-card__desc">Надёжные дюбеля для всех типов поверхностей.</p>
-                </article>
-                <article class="product-card">
-                    <img src="{% static 'images/product-kraska.jpg' %}" alt="Распределительные коробки"
-                         class="product-card__image"/>
-                    <h3 class="product-card__title">Распределительные коробки</h3>
-                    <p class="product-card__desc">Компактные и долговечные коробки для электрики.</p>
-                </article>
-                <!-- Добавить остальные продукты аналогично -->
+    <section class="categories-section">
+        <div class="container-main categories__container">
+            <h2 class="section-title">Категории продукции</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="{% static 'webapp/svg/nut-and-bolt-svgrepo-com.svg' %}" alt="Дюбели"
+                         class="category-icon"/>
+                    <p class="category-name">Дюбели</p>
+                </div>
+                <div class="category-card">
+                    <img src="{% static 'webapp/svg/cubes-in-stack-with-shadow-svgrepo-com.svg' %}" alt="Распределительные коробки"
+                         class="category-icon"/>
+                    <p class="category-name">Распредкоробки</p>
+                </div>
+                <div class="category-card">
+                    <img src="{% static 'webapp/svg/bolt-construction-nail-svgrepo-com.svg' %}" alt="Клинья" class="category-icon"/>
+                    <p class="category-name">Клинья</p>
+                </div>
+                <div class="category-card">
+                    <img src="{% static 'webapp/svg/electrical-crescent-svgrepo-com.svg' %}" alt="Заглушки" class="category-icon"/>
+                    <p class="category-name">Заглушки</p>
+                </div>
+                <!-- Добавьте остальные категории аналогично -->
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">О Пластик групп</h2>
-            <p>
-                Пластик групп — ведущий производитель изделий из полимеров для строительства. Мы предлагаем
-                инновационные и качественные решения для строительных организаций и специализированных магазинов.
-            </p>
+    <!-- Блок продукции -->
+    <section id="products" class="categories-section">
+        <div class="container-main">
+            <h2 class="section-title">Наша продукция</h2>
+            <div class="products-grid">
+                <!-- пример карточки продукта -->
+                <article class="product-card">
+                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-image"/>
+                    <h3 class="product-title">Дюбель</h3>
+                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                    <p class="product-date">Дата: 2025</p>
+                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                </article>
+                <article class="product-card">
+                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-image"/>
+                    <h3 class="product-title">Дюбель</h3>
+                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                    <p class="product-date">Дата: 2025</p>
+                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                </article>
+                <article class="product-card">
+                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-image"/>
+                    <h3 class="product-title">Дюбель</h3>
+                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                    <p class="product-date">Дата: 2025</p>
+                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                </article>
+                <article class="product-card">
+                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-image"/>
+                    <h3 class="product-title">Дюбель</h3>
+                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                    <p class="product-date">Дата: 2025</p>
+                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                </article>
+                <article class="product-card">
+                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-image"/>
+                    <h3 class="product-title">Дюбель</h3>
+                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                    <p class="product-date">Дата: 2025</p>
+                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                </article>
+                <article class="product-card">
+                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-image"/>
+                    <h3 class="product-title">Дюбель</h3>
+                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                    <p class="product-date">Дата: 2025</p>
+                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                </article>
+                <!-- Добавьте аналогичные карточки для других продуктов -->
+            </div>
+            <div class="products-btn-wrapper">
+                <a href="#" class="btn btn-secondary call-button">Посмотреть все</a>
+            </div>
         </div>
     </section>
 
-    <section id="contacts" class="contacts">
-        <div class="container">
-            <h2 class="section-title">Контакты</h2>
-            <address>
-                <p>Адрес: г. Москва, ул. Примерная, д. 1</p>
-                <p>Телефон: +7 (495) 123-45-67</p>
-                <p>Email: info@plastikgroup.ru</p>
-            </address>
+    <!-- Блок преимуществ -->
+    <section class="advantages-section">
+        <div class="container-main">
+            <h2 class="section-title">Наши преимущества</h2>
+            <ul class="advantages-list">
+                <li>Высокое качество продукции</li>
+                <li>Собственное производство с современным оборудованием</li>
+                <li>Экологичные и безопасные материалы</li>
+                <li>Индивидуальный подход к заказу</li>
+                <li>Доставка по всей России</li>
+            </ul>
         </div>
     </section>
+
+    <!-- Блок контактов и карта -->
+    <section id="contacts" class="contacts-section">
+        <div class="container-main">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contacts-wrapper">
+                <div class="contacts-info">
+                    <p>Адрес: г. Москва, ул. Примерная, д. 1</p>
+                    <p>Телефон: +7 (495) 123-45-67</p>
+                    <p>Email: info@plastikgroup.ru</p>
+                </div>
+                <div class="contacts-map">
+                    <!-- Ваша карта (например iframe Google Maps) -->
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!..."
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма заказа -->
+    <section class="order-form-section">
+        <div class="container-main">
+            <h2 class="section-title">Отправить заказ</h2>
+            <form class="order-form" action="#" method="POST">
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name" required placeholder="Ваше имя"/>
+
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__"/>
+
+                <label for="product">Продукт</label>
+                <select id="product" name="product" required>
+                    <option value="">Выберите продукт</option>
+                    <option value="dyubel">Дюбель</option>
+                    <option value="boxes">Распределительные коробки</option>
+                    <option value="klins">Клинья</option>
+                    <option value="plugs">Заглушки</option>
+                </select>
+
+                <label for="quantity">Количество</label>
+                <input type="number" id="quantity" name="quantity" min="1" required placeholder="1"/>
+
+                <label for="comments">Комментарий</label>
+                <textarea id="comments" name="comments" rows="3" placeholder="Дополнительная информация"></textarea>
+
+                <button type="submit" class="btn btn-primary">Отправить заказ</button>
+            </form>
+        </div>
+    </section>
+
 </main>
+
 
 <footer class="footer">
     <div class="container footer__container">
@@ -150,11 +248,11 @@
         <!-- Основное меню -->
         <nav class="footer-nav">
             <ul>
-                <li><a href="#" class="footer-link">Главная</a></li>
-                <li><a href="#products" class="footer-link">Продукция</a></li>
-                <li><a href="#about" class="footer-link">О компании</a></li>
-                <li><a href="#contacts" class="footer-link">Контакты</a></li>
-                <li><a href="#news" class="footer-link">Новости</a></li>
+                <li><a href="#" class="footer-link"><i class="fas fa-flag"></i> Главная</a></li>
+                <li><a href="#products" class="footer-link"><i class="fas fa-shopping-bag"></i> Продукция</a></li>
+                <li><a href="#about" class="footer-link"><i class="fas fa-info-circle"></i> О компании</a></li>
+                <li><a href="#contacts" class="footer-link"><i class="fas fa-phone"></i> Контакты</a></li>
+                <li><a href="#news" class="footer-link"><i class="fas fa-newspaper"></i> Новости</a></li>
             </ul>
         </nav>
 
