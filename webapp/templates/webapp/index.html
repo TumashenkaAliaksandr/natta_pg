@@ -10,6 +10,7 @@
     <!-- Подключите FontAwesome иконки в <head> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="{% static 'webapp/css/style.css' %}"/>
+    <link rel="icon" href="{% static 'webapp/img/favicon_natta_pg.png' %}" type="image/svg+xml" />
 </head>
 <body>
 
@@ -57,6 +58,9 @@
 
         <!-- Выезжающее слева меню -->
         <nav class="nav">
+            <div class="logo-nav">
+                <img src="{% static 'webapp/img/logo_natta_pg.png' %}" alt="NATTA PG Логотип"/>
+            </div>
             <ul class="nav__list">
                 <li><a href="#" class="nav__link active">Главная</a></li>
                 <li><a href="#products" class="nav__link">Продукция</a></li>
@@ -131,49 +135,45 @@
 
 <footer class="footer">
     <div class="container footer__container">
-        <div class="footer-content">
-
-            <!-- Логотип -->
-            <div class="footer-logo">
-                <a href="/">
-                    <img src="{% static 'webapp/img/logo_natta_pg.png' %}" alt="Пластик групп Логотип"/>
-                </a>
-            </div>
-
-            <!-- Адрес -->
-            <address class="footer-address">
-                123456, Москва, ул. Примерная, д. 1
-            </address>
-
-            <!-- Основное меню -->
-            <nav class="footer-nav">
-                <ul>
-                    <li><a href="#" class="footer-link">Главная</a></li>
-                    <li><a href="#products" class="footer-link">Продукция</a></li>
-                    <li><a href="#about" class="footer-link">О компании</a></li>
-                    <li><a href="#contacts" class="footer-link">Контакты</a></li>
-                    <li><a href="#news" class="footer-link">Новости</a></li>
-                </ul>
-            </nav>
-
-            <!-- Социальные сети -->
-            <div class="footer-socials">
-                <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com" target="_blank" aria-label="Twitter" rel="noopener"><i
-                        class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" rel="noopener"><i
-                        class="fab fa-linkedin-in"></i></a>
-            </div>
-
+        <!-- Логотип -->
+        <div class="footer-logo">
+            <a href="/">
+                <img src="{% static 'webapp/img/logo_natta_pg.png' %}" alt="Пластик групп Логотип"/>
+            </a>
         </div>
 
-        <p class="footer-copyright">
-            © 2025 Пластик групп. Все права защищены.
-        </p>
+        <!-- Адрес -->
+        <address class="footer-address">
+            123456, Москва, ул. Примерная, д. 1
+        </address>
+
+        <!-- Основное меню -->
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="#" class="footer-link">Главная</a></li>
+                <li><a href="#products" class="footer-link">Продукция</a></li>
+                <li><a href="#about" class="footer-link">О компании</a></li>
+                <li><a href="#contacts" class="footer-link">Контакты</a></li>
+                <li><a href="#news" class="footer-link">Новости</a></li>
+            </ul>
+        </nav>
+
+        <!-- Социальные сети -->
+        <div class="footer-socials">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter" rel="noopener"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" rel="noopener"><i
+                    class="fab fa-linkedin-in"></i></a>
+        </div>
     </div>
+
+    <p class="footer-copyright">
+        © 2025 Пластик групп. Все права защищены.
+    </p>
 </footer>
 
 

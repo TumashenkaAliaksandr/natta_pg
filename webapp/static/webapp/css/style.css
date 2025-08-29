@@ -1,8 +1,7 @@
 /* Сброс и базовые параметры */
 body {
     background-color: beige; /* насыщенный глубокий темно-коричневый */
-    color: #F1FAEE; /* теплый светлый цвет текста */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Fira Sans', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -10,12 +9,12 @@ body {
 
 /* Header с градиентом ярких испанских цветов */
 header {
-    background: linear-gradient(135deg, #2e1b18 0%, /* темный шоколад */ #f12222 45%, /* основной яркий красный */ #f4bf61 85% /* теплый желтый акцент */);
+    background: linear-gradient(135deg, #fcf9f8 0%, #eaeaea 45%, #ffed57 85%);
     padding: 1.2rem 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 0 30px rgba(230, 57, 70, 0.65);
+    box-shadow: 0 0 30px rgb(228 191 194 / 65%);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -44,19 +43,19 @@ header {
     position: relative;
     padding: 0.3rem 0.8rem;
     border-radius: 7px;
-    background: linear-gradient(145deg, #ff1e03, #812925);
+    background: linear-gradient(145deg, #ff1e03, #f2de35);
     box-shadow: 0 2px 4px #83341a, inset 0 -4px 6px #e77439;
     transition: color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
     user-select: none;
-    text-shadow: 1px 1px 2px #7a3d21, 0 0 5px #ffb972;
+    text-shadow: 1px 1px 1px #7a3d21, 0 0 1px #ffb972;
 }
 
 /* Светящийся эффект при наведении */
 .header-contacts a:hover {
     color: #e63946;
-    background: linear-gradient(145deg, #e9ddd4, #ed9d52);
-    box-shadow: 0 0 15px #ff9f3f, inset 0 0 12px #ffdca8, 0 0 7px #ff9f3f;
-    text-shadow: 1px 1px 6px #ffbb62, 0 0 10px #ffbb62;
+    background: linear-gradient(209deg, #e4e4e4, #fffbd8);
+    text-shadow: 1px 1px 3px #ffbb62, 0 0 7px #ffbb62;
+    box-shadow: 0 0 9px #fffdef, inset 0 0 12px #fafafa, 0 0 7px #ff9f3f;
 }
 
 
@@ -100,30 +99,64 @@ header {
 
     filter:
       drop-shadow(0 0 6px #F4A261)
-      drop-shadow(0 0 12px #E63946)
+      drop-shadow(0 0 12px rgba(230, 100, 110, 0.3))
       drop-shadow(0 0 18px #F4A261)
-      drop-shadow(0 0 24px #E63946);
+      drop-shadow(0 0 24px rgba(230, 100, 110, 0.2));
 
     animation: slowFireGlow 8s infinite ease-in-out;
     transition: transform 0.3s ease;
     position: relative;
 }
 
+/*@keyframes slowFireGlow {*/
+/*    0%, 100% {*/
+/*        filter:*/
+/*          drop-shadow(0 0 6px #F4A261)*/
+/*          drop-shadow(0 0 12px rgba(230, 100, 110, 0.15))*/
+/*          drop-shadow(0 0 18px #F4A261)*/
+/*          drop-shadow(0 0 24px rgba(230, 100, 110, 0.1));*/
+/*        transform: scale(1);*/
+/*    }*/
+/*    50% {*/
+/*        filter:*/
+/*          drop-shadow(0 0 12px #F4A261)*/
+/*          drop-shadow(0 0 25px rgba(230, 100, 110, 0.25))*/
+/*          drop-shadow(0 0 35px #F4A261)*/
+/*          drop-shadow(0 0 45px rgba(230, 100, 110, 0.15));*/
+/*        transform: scale(1.03);*/
+/*    }*/
+/*}*/
+
+
+/* Логотип и бургер */
+.logo-nav img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    height: 100px;
+    filter: drop-shadow(0 0 6px #F4A261) drop-shadow(0 0 12px #E63946) drop-shadow(0 0 18px #F4A261) drop-shadow(0 0 24px #E63946);
+    animation: slowFireGlow 8s infinite ease-in-out;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 20px;
+    left: 75px;
+}
+
 @keyframes slowFireGlow {
     0%, 100% {
         filter:
           drop-shadow(0 0 6px #F4A261)
-          drop-shadow(0 0 12px #E63946)
+          drop-shadow(0 0 12px #d6d6d6)
           drop-shadow(0 0 18px #F4A261)
-          drop-shadow(0 0 24px #E63946);
+          drop-shadow(0 0 24px #d3d0d1);
         transform: scale(1);
     }
     50% {
         filter:
           drop-shadow(0 0 12px #F4A261)
-          drop-shadow(0 0 25px #E63946)
+          drop-shadow(0 0 25px #e4e4e4)
           drop-shadow(0 0 35px #F4A261)
-          drop-shadow(0 0 45px #E63946);
+          drop-shadow(0 0 45px #cfcfcf);
         transform: scale(1.03);
     }
 }
@@ -149,7 +182,7 @@ header {
 .menu-icon span {
     display: block;
     height: 4px;
-    background-color: #f4a261;
+    background-color: #9a8e84;
     border-radius: 2px;
     transition: all 0.4s ease;
 }
@@ -161,11 +194,11 @@ header {
     left: 0;
     height: 100vh;
     width: 320px;
-    background-color: #3b2724; /* чуть светлее темного */
+    background-color: #ffed51; /* чуть светлее темного */
     padding: 5rem 2rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 4.5rem;
     transform: translateX(-100%);
     transition: transform 0.4s ease;
     box-shadow: 2px 0 18px rgba(230, 57, 70, 0.8);
@@ -186,7 +219,7 @@ header {
 }
 
 .nav__link {
-    color: #F4A261;
+    color: #825a5a;
     text-decoration: none;
     font-weight: 700;
     font-size: 1.4rem;
@@ -220,40 +253,40 @@ header {
 
 .header-search input {
     padding: 0.49rem 0.8rem;
-    border-radius: 10px;
+    border-radius: 7px;
     border: none;
     font-size: 1rem;
     outline: none;
-    width: 180px;
-    background-color: #f4bf6159;
+    width: 150px;
+    background-color: #efeac6b0;
     color: #F4A261;
     transition: width 0.4s ease;
 }
 
 .header-search input:focus {
-    background-color: #7e534b;
+    background-color: #fffdf0b0;
 }
 
 .header-search button {
     padding: 0.3rem 0.4rem;
     background: none;
-    border: 2px solid #f7b687;
-    border-radius: 10px;
-    color: #f7b687;
+    border: 2px solid #ccb7b7;
+    border-radius: 7px;
+    color: #ccb7b7;
     font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .header-search button:hover {
-    background-color: #ffdec3;
+    background-color: #f5eb98;
     color: #3b2724;
 }
 
 /* Телефоны */
 .header-contacts {
     display: flex;
-    gap: 2rem;
+    gap: 1.3rem;
     font-weight: 600;
     font-size: 1.1rem;
 }
@@ -268,12 +301,12 @@ header {
 /* Социальные сети */
 .header-socials {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.3rem;
     font-size: 1.6rem;
 }
 
 .header-socials a {
-    color: #e7e7e7;
+    color: #825a5a;
     transition: color 0.3s ease;
 }
 
@@ -302,7 +335,7 @@ header {
 }
 /* Общие стили кнопки "Заказать звонок" */
 .call-button {
-  background: linear-gradient(145deg, #cc4a3e, #ffb955);
+  background: linear-gradient(145deg, #ff5241, #ffb955);
   padding: 0.75rem 2.2rem;
   border-radius: 7px;
   color: #fff;
@@ -330,10 +363,7 @@ header {
 }
 
 .call-button:hover {
-  box-shadow:
-    0 12px 22px rgba(255, 185, 95, 0.9),
-    0 0 20px #ffce5d,
-    inset 0 8px 25px #fff1b8;
+  box-shadow: 0 12px 22px rgba(255, 185, 95, 0.9), 0 0 20px #f51e05, inset 0 8px 25px #fff1b8;
   transform: translateY(-3px);
 }
 
@@ -395,30 +425,31 @@ header {
   justify-content: flex-end;
 }
 
-
-/* Футер с градиентом */
 .footer {
-    background: linear-gradient(
-      90deg,
-      #2E1B18 0%,
-      #E63946 40%,
-      #F4A261 70%
-    );
+    background: linear-gradient(90deg, #e3e3e3 21%, #f3ebab 30%, #ffed57 87%);
     color: #F1FAEE;
     padding: 2.5rem 3rem;
     box-shadow: inset 0 8px 12px -8px rgba(230, 57, 70, 0.6);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     user-select: none;
-    border-top: 2px solid #B7373B;
     transition: background-color 0.4s ease;
+
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column; /* Для основного футера колоночный, потому что копирайт снизу */
+    gap: 1.5rem;
 }
 
-/* Логотип футера */
+.footer__container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+}
+
+/* Оставляем стили для отдельных блоков */
 .footer-logo {
     flex: 0 0 auto;
 }
@@ -433,39 +464,27 @@ header {
     transform: scale(1.08);
 }
 
-/* Контент футера справа */
-.footer-content-right {
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: flex-end;
-    gap: 4rem;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-/* Адрес в футере */
 .footer-address {
     font-weight: 600;
     font-size: 1.1rem;
     letter-spacing: 0.04em;
     user-select: text;
     max-width: 300px;
-    align-self: center;
-    color: #F1FAEE;
+    color: #825a5a;
+    white-space: nowrap;
 }
 
-/* Меню футера */
 .footer-nav ul {
     list-style: none;
     display: flex;
     gap: 2.5rem;
     padding-left: 0;
-    flex-wrap: wrap;
+    margin: 0;
     align-items: center;
 }
 
 .footer-link {
-    color: #F4A261;
+    color: #825a5a;
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
@@ -478,7 +497,6 @@ header {
     text-decoration: underline;
 }
 
-/* Соцсети в футере */
 .footer-socials {
     display: flex;
     gap: 1.8rem;
@@ -487,7 +505,7 @@ header {
 }
 
 .footer-socials a {
-    color: #F4A261;
+    color: #825a5a;
     transition: color 0.3s ease;
 }
 
@@ -495,25 +513,34 @@ header {
     color: #E63946;
 }
 
-/* Адаптив для мобильных */
+.footer-copyright {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #404040;
+}
+
+/* Защита от узких экранов: показываем вертикальный стек только ниже 768px */
 @media (max-width: 768px) {
+    .footer {
+        padding: 2rem 1.5rem;
+    }
     .footer__container {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
         align-items: center;
-    }
-    .footer-content-right {
         justify-content: center;
-        gap: 2rem;
+    }
+    .footer-address {
+        max-width: 100%;
+        text-align: center;
+        white-space: normal;
     }
     .footer-nav ul {
         flex-direction: column;
         gap: 1rem;
         align-items: center;
     }
-    .footer-address {
-        max-width: 100%;
-        text-align: center;
-        color: #F1FAEE;
+    .footer-socials {
+        justify-content: center;
     }
 }
