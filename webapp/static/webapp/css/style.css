@@ -7,6 +7,44 @@ body {
     scroll-behavior: smooth;
 }
 
+.top-bar {
+  top: 0;
+  left: 0;
+  background: linear-gradient(308deg, #ff0013, #ffed57);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  z-index: 10000;
+  gap: 1rem;
+}
+
+.top-bar span {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #222;
+}
+
+
 /* Header с градиентом ярких испанских цветов */
 header {
     background: linear-gradient(135deg, #fcf9f8 0%, #eaeaea 45%, #ffed57 85%);
@@ -54,8 +92,8 @@ header {
 .header-contacts a:hover {
     color: #e63946;
     background: linear-gradient(209deg, #e4e4e4, #fffbd8);
-    text-shadow: 1px 1px 3px #ffbb62, 0 0 7px #ffbb62;
-    box-shadow: 0 0 9px #fffdef, inset 0 0 12px #fafafa, 0 0 7px #ff9f3f;
+    text-shadow: 1px 1px 1px #ffbb62, 0 0 1px #ffbb62;
+    box-shadow: 0 0 9px #fffdef, inset 0 0 4px #fafafa, 0 0 4px #ff9f3f;
 }
 
 
@@ -472,7 +510,7 @@ header {
 /* -------- Категории товаров -------- */
 .categories-section {
     padding: 2rem 0;
-    background-color: #f9f6f2;
+    background-color: #f0efee;
     text-align: center;
 }
 
@@ -489,14 +527,11 @@ header {
 }
 
 .category-card {
-    width: 140px;
+    width: 125px;
     border-radius: 100px;
     padding: 2rem;
     background: #f9f6f2;
-    box-shadow:
-      inset 5px 5px 10px rgba(255, 255, 255, 0.8), /* светлая внутренняя тень */
-      inset -5px -5px 10px rgba(230, 57, 70, 0.15), /* темная внутренняя тень */
-      0 0 15px rgba(230, 57, 70, 0.15); /* мягкая внешняя тень */
+    box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.8), inset -5px -5px 10px rgba(230, 57, 70, 0.15), 0 0 15px rgb(233 233 233);
     cursor: default;
     transition: box-shadow 0.3s ease;
     display: flex;
@@ -758,6 +793,34 @@ header {
     }
 }
 
+.advantages-list.horizontal-list {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1000px;
+  list-style: none;
+}
+
+.advantages-list.horizontal-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  color: #2e1b18;
+  flex-shrink: 0;
+  max-width: 200px;
+  text-align: center;
+}
+
+.advantage-icon {
+  width: 28px;
+  height: 28px;
+  stroke: #e63946;
+  flex-shrink: 0;
+}
 
 
 

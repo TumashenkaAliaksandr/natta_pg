@@ -14,6 +14,13 @@
 </head>
 <body>
 
+<!-- Рекламная топ-полоска -->
+<div id="top-bar" class="top-bar" role="region" aria-label="Рекламное объявление">
+  <span>Лучшие предложения по производсву пластмасс! Звоните прямо сейчас!</span>
+  <button class="close-button" aria-label="Закрыть">&times;</button>
+</div>
+
+
 
 <header class="header">
     <div class="container header__container">
@@ -167,15 +174,51 @@
     <section class="advantages-section">
         <div class="container-main">
             <h2 class="section-title">Наши преимущества</h2>
-            <ul class="advantages-list">
-                <li>Высокое качество продукции</li>
-                <li>Собственное производство с современным оборудованием</li>
-                <li>Экологичные и безопасные материалы</li>
-                <li>Индивидуальный подход к заказу</li>
-                <li>Доставка по всей России</li>
+            <ul class="advantages-list horizontal-list">
+                <li>
+                    <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" stroke="#e63946" stroke-width="2"/>
+                        <path d="M8 12l3 3 5-5" stroke="#e63946" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                    </svg>
+                    <span>Высокое качество продукции</span>
+                </li>
+                <li>
+                    <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         aria-hidden="true">
+                        <rect x="3" y="8" width="18" height="10" stroke="#e63946" stroke-width="2" rx="2"/>
+                        <path d="M3 8l9-5 9 5" stroke="#e63946" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Собственное производство с современным оборудованием</span>
+                </li>
+                <li>
+                    <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" stroke="#e63946" stroke-width="2"/>
+                        <path d="M7 12l3 3 7-7" stroke="#e63946" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                    </svg>
+                    <span>Экологичные и безопасные материалы</span>
+                </li>
+                <li>
+                    <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         aria-hidden="true">
+                        <path d="M12 2v20M2 12h20" stroke="#e63946" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Индивидуальный подход к заказу</span>
+                </li>
+                <li>
+                    <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         aria-hidden="true">
+                        <path d="M3 12h18M6 6h12M6 18h12" stroke="#e63946" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Доставка по всей России</span>
+                </li>
             </ul>
         </div>
     </section>
+
 
     <!-- Блок контактов и карта -->
     <section id="contacts" class="contacts-section">
