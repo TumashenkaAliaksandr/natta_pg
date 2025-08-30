@@ -1,0 +1,14 @@
+<svg width="240" height="80" viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" role="img">
+  <title>Логотип NattaPg</title>
+
+  <!-- Абстрактный символ N с элементами крепежа -->
+  <g fill="none" stroke="#e63946" stroke-width="6" stroke-linejoin="round">
+    <path d="M20 70 L20 10 L50 50 L80 10 L80 70" /> <!-- буква N -->
+    <circle cx="50" cy="50" r="10" fill="#e63946" /> <!-- символ крепежа -->
+  </g>
+
+  <!-- Надпись NattaPg -->
+  <text x="100" y="55" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif"
+        font-size="40" font-weight="700" fill="#000000" letter-spacing="2px">NattaPg</text>
+
+</svg>

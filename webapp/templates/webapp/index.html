@@ -10,7 +10,7 @@
     <!-- Подключите FontAwesome иконки в <head> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="{% static 'webapp/css/style.css' %}"/>
-    <link rel="icon" href="{% static 'webapp/img/favicon_natta_pg.png' %}" type="image/svg+xml" />
+    <link rel="icon" href="{% static 'webapp/svg/favicon.svg' %}" type="image/svg+xml" sizes="any"  />
 </head>
 <body>
 
@@ -25,7 +25,7 @@
 <header class="header">
     <div class="container header__container">
         <div class="logo">
-            <img src="{% static 'webapp/img/logo_natta_pg.png' %}" alt="NATTA PG Логотип"/>
+            <img src="{% static 'webapp/img/nat_logo.png' %}" alt="NATTA PG Логотип"/>
         </div>
 
         <!-- Бургер чекбокс -->
@@ -66,7 +66,7 @@
         <!-- Выезжающее слева меню -->
         <nav class="nav">
             <div class="logo-nav">
-                <img src="{% static 'webapp/img/logo_natta_pg.png' %}" alt="NATTA PG Логотип"/>
+                <img src="{% static 'webapp/img/nat_logo.png' %}" alt="NATTA PG Логотип"/>
             </div>
             <ul class="nav__list">
                 <li><a href="#" class="nav__link active"><i class="fas fa-flag"></i> Главная</a></li>
@@ -74,8 +74,6 @@
                 <li><a href="#about" class="nav__link"><i class="fas fa-info-circle"></i> О компании</a></li>
                 <li><a href="#contacts" class="nav__link"><i class="fas fa-phone"></i> Контакты</a></li>
                 <li><a href="#news" class="nav__link"><i class="fas fa-newspaper"></i> Новости</a></li>
-                <li><a href="#faq" class="nav__link"><i class="fas fa-question-circle"></i> Вопросы</a></li>
-                <li><a href="#partners" class="nav__link"><i class="fas fa-handshake"></i> Партнёры</a></li>
             </ul>
 
             <a href="tel:+74951234567" class="call-button call-button--menu">Заказать звонок</a>
@@ -89,7 +87,7 @@
 
     <section class="categories-section">
         <div class="container-main categories__container">
-            <h2 class="section-title">Категории продукции</h2>
+            <h2 class="section-title-categories">Категории продукции</h2>
             <div class="categories-grid">
                 <div class="category-card">
                     <img src="{% static 'webapp/svg/nut-and-bolt-svgrepo-com.svg' %}" alt="Дюбели"
@@ -121,43 +119,43 @@
             <div class="products-grid">
                 <!-- пример карточки продукта -->
                 <article class="product-card">
-                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-image"/>
+                    <img src="{% static 'webapp/img/natta_pg_dubel.png' %}" alt="Дюбель" class="product-image"/>
                     <h3 class="product-title">Дюбель</h3>
                     <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
                     <p class="product-date">Дата: 2025</p>
                     <a href="#" class="btn btn-primary btn-product">Перейти</a>
                 </article>
                 <article class="product-card">
-                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-image"/>
+                    <img src="{% static 'webapp/img/natta_pg_raspredcorob-nbg.png' %}" alt="Дюбель" class="product-image"/>
+                    <h3 class="product-title">Распредкоробки</h3>
+                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                    <p class="product-date">Дата: 2025</p>
+                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                </article>
+                <article class="product-card">
+                    <img src="{% static 'webapp/img/natta_pg_dubel.png' %}" alt="Дюбель" class="product-image"/>
                     <h3 class="product-title">Дюбель</h3>
                     <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
                     <p class="product-date">Дата: 2025</p>
                     <a href="#" class="btn btn-primary btn-product">Перейти</a>
                 </article>
                 <article class="product-card">
-                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-image"/>
+                    <img src="{% static 'webapp/img/natta_pg_raspredcorob-nbg.png' %}" alt="Дюбель" class="product-image"/>
+                    <h3 class="product-title">Распредкоробки</h3>
+                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                    <p class="product-date">Дата: 2025</p>
+                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                </article>
+                <article class="product-card">
+                    <img src="{% static 'webapp/img/natta_pg_dubel.png' %}" alt="Дюбель" class="product-image"/>
                     <h3 class="product-title">Дюбель</h3>
                     <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
                     <p class="product-date">Дата: 2025</p>
                     <a href="#" class="btn btn-primary btn-product">Перейти</a>
                 </article>
                 <article class="product-card">
-                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-image"/>
-                    <h3 class="product-title">Дюбель</h3>
-                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
-                    <p class="product-date">Дата: 2025</p>
-                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
-                </article>
-                <article class="product-card">
-                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-image"/>
-                    <h3 class="product-title">Дюбель</h3>
-                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
-                    <p class="product-date">Дата: 2025</p>
-                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
-                </article>
-                <article class="product-card">
-                    <img src="{% static 'images/product-dyubel.jpg' %}" alt="Дюбель" class="product-image"/>
-                    <h3 class="product-title">Дюбель</h3>
+                    <img src="{% static 'webapp/img/natta_pg_raspredcorob-nbg.png' %}" alt="Дюбель" class="product-image"/>
+                    <h3 class="product-title">Распредкоробки</h3>
                     <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
                     <p class="product-date">Дата: 2025</p>
                     <a href="#" class="btn btn-primary btn-product">Перейти</a>
@@ -165,7 +163,7 @@
                 <!-- Добавьте аналогичные карточки для других продуктов -->
             </div>
             <div class="products-btn-wrapper">
-                <a href="#" class="btn btn-secondary call-button">Посмотреть все</a>
+                <a href="#" class="btn btn-secondary see_all">Посмотреть все</a>
             </div>
         </div>
     </section>
@@ -176,44 +174,28 @@
             <h2 class="section-title">Наши преимущества</h2>
             <ul class="advantages-list horizontal-list">
                 <li>
-                    <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                         aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" stroke="#e63946" stroke-width="2"/>
-                        <path d="M8 12l3 3 5-5" stroke="#e63946" stroke-width="2" stroke-linecap="round"
-                              stroke-linejoin="round"/>
-                    </svg>
-                    <span>Высокое качество продукции</span>
+                    <img src="{% static 'webapp/svg/quality-certificate-award-svgrepo-com.svg' %}" alt="Высокое качество продукции"
+                         class="advantage-icon"/>
+                    <span>Высокое Качество</span>
                 </li>
                 <li>
-                    <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                         aria-hidden="true">
-                        <rect x="3" y="8" width="18" height="10" stroke="#e63946" stroke-width="2" rx="2"/>
-                        <path d="M3 8l9-5 9 5" stroke="#e63946" stroke-width="2" stroke-linejoin="round"/>
-                    </svg>
-                    <span>Собственное производство с современным оборудованием</span>
+                    <img src="{% static 'webapp/svg/factory-svgrepo-com.svg' %}" alt="Современное производство"
+                         class="advantage-icon"/>
+                    <span>Современное производство</span>
                 </li>
                 <li>
-                    <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                         aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" stroke="#e63946" stroke-width="2"/>
-                        <path d="M7 12l3 3 7-7" stroke="#e63946" stroke-width="2" stroke-linecap="round"
-                              stroke-linejoin="round"/>
-                    </svg>
-                    <span>Экологичные и безопасные материалы</span>
+                    <img src="{% static 'webapp/svg/eco-greenpeace-no-plastic-2-svgrepo-com.svg' %}" alt="Экологичные материалы"
+                         class="advantage-icon"/>
+                    <span>Экологичные и материалы</span>
                 </li>
                 <li>
-                    <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                         aria-hidden="true">
-                        <path d="M12 2v20M2 12h20" stroke="#e63946" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    <span>Индивидуальный подход к заказу</span>
+                    <img src="{% static 'webapp/svg/agreement-bussiness-discount-svgrepo-com.svg' %}" alt="Индивидуальный подход"
+                         class="advantage-icon"/>
+                    <span>Индивидуальный подход</span>
                 </li>
                 <li>
-                    <svg class="advantage-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                         aria-hidden="true">
-                        <path d="M3 12h18M6 6h12M6 18h12" stroke="#e63946" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    <span>Доставка по всей России</span>
+                    <img src="{% static 'webapp/svg/delivery-truck-box-delivery-svgrepo-com.svg' %}" alt="Доставка" class="advantage-icon"/>
+                    <span>Доставка по СНГ</span>
                 </li>
             </ul>
         </div>
@@ -226,50 +208,46 @@
             <h2 class="section-title">Контакты</h2>
             <div class="contacts-wrapper">
                 <div class="contacts-info">
+                    <h2 class="section-title-contact-form">Отправить заказ</h2>
+                    <form class="order-form" action="#" method="POST">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name" required placeholder="Ваше имя"/>
+
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__"/>
+
+                        <label for="product">Продукт</label>
+                        <select id="product" name="product" required>
+                            <option value="">Выберите продукт</option>
+                            <option value="dyubel">Дюбель</option>
+                            <option value="boxes">Распределительные коробки</option>
+                            <option value="klins">Клинья</option>
+                            <option value="plugs">Заглушки</option>
+                        </select>
+
+                        <label for="quantity">Количество</label>
+                        <input type="number" id="quantity" name="quantity" min="1" required placeholder="1"/>
+
+                        <label for="comments">Комментарий</label>
+                        <textarea id="comments" name="comments" rows="3"
+                                  placeholder="Дополнительная информация"></textarea>
+
+                        <button type="submit" class="btn btn-primary">Отправить заказ</button>
+                    </form>
+                </div>
+                <div class="contacts-map">
+                    <!-- Ваша карта (например iframe Google Maps) -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d144538.97856585667!2d28.44601600718626!3d55.52502639786686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c4855711e214cf%3A0x73330f4b118c705a!2z0J3QvtCy0L7Qv9C-0LvQvtGG0LosINCS0LjRgtC10LHRgdC60LDRjyDQvtCx0LvQsNGB0YLRjA!5e0!3m2!1sru!2sby!4v1756538907651!5m2!1sru!2sby" width="720" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="contacts-info">
                     <p>Адрес: г. Москва, ул. Примерная, д. 1</p>
                     <p>Телефон: +7 (495) 123-45-67</p>
                     <p>Email: info@plastikgroup.ru</p>
                 </div>
-                <div class="contacts-map">
-                    <!-- Ваша карта (например iframe Google Maps) -->
-                    <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!..."
-                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Форма заказа -->
-    <section class="order-form-section">
-        <div class="container-main">
-            <h2 class="section-title">Отправить заказ</h2>
-            <form class="order-form" action="#" method="POST">
-                <label for="name">Имя</label>
-                <input type="text" id="name" name="name" required placeholder="Ваше имя"/>
-
-                <label for="phone">Телефон</label>
-                <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__"/>
-
-                <label for="product">Продукт</label>
-                <select id="product" name="product" required>
-                    <option value="">Выберите продукт</option>
-                    <option value="dyubel">Дюбель</option>
-                    <option value="boxes">Распределительные коробки</option>
-                    <option value="klins">Клинья</option>
-                    <option value="plugs">Заглушки</option>
-                </select>
-
-                <label for="quantity">Количество</label>
-                <input type="number" id="quantity" name="quantity" min="1" required placeholder="1"/>
-
-                <label for="comments">Комментарий</label>
-                <textarea id="comments" name="comments" rows="3" placeholder="Дополнительная информация"></textarea>
-
-                <button type="submit" class="btn btn-primary">Отправить заказ</button>
-            </form>
-        </div>
-    </section>
 
 </main>
 
@@ -279,7 +257,7 @@
         <!-- Логотип -->
         <div class="footer-logo">
             <a href="/">
-                <img src="{% static 'webapp/img/logo_natta_pg.png' %}" alt="Пластик групп Логотип"/>
+                <img src="{% static 'webapp/img/nat_logo.png' %}" alt="Пластик групп Логотип"/>
             </a>
         </div>
 

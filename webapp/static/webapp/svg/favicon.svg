@@ -1,0 +1,15 @@
+<svg width="74" height="74" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <radialGradient id="plasticShine" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6b6b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#990000" stop-opacity="1"/>
+    </radialGradient>
+    <filter id="plasticShadow" x="0" y="0" width="64" height="64" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#550000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect x="8" y="8" width="55" height="55" rx="12" ry="12" fill="url(#plasticShine)" filter="url(#plasticShadow)"/>
+  <text x="35" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#fff" stroke="#660000" stroke-width="1.5" paint-order="stroke">
+    NAT
+  </text>
+</svg>
