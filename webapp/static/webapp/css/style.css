@@ -894,9 +894,149 @@ header {
 }
 
 
+.slider-container {
+    width: 1450px;
+    height: 400px;
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
 
+/* Левая панель - одно окно с одним слайдом */
+.slider-left {
+  width: 40%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #0008;
+}
 
+/* Правая панель - четыре окна слайдов */
+.slider-right {
+  width: 60%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #0008;
+  position: relative;
+}
 
+/* Общие стили для слайдов */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  user-select: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+/* левый слайд активный */
+.slide-left.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  animation-name: slideLeftAnimation;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Правые слайды - позиционирование в grid */
+.slider-right .slide-right {
+  position: relative;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+/* Активный правый слайд показывается */
+.slider-right .slide-right.active {
+  opacity: 1;
+  pointer-events: auto;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* Анимации для правых слайдов - по разному */
+.slider-right .slide-right:nth-child(1).active {
+  animation-name: rightAnim1;
+}
+
+.slider-right .slide-right:nth-child(2).active {
+  animation-name: rightAnim2;
+}
+
+.slider-right .slide-right:nth-child(3).active {
+  animation-name: rightAnim3;
+}
+
+.slider-right .slide-right:nth-child(4).active {
+  animation-name: rightAnim4;
+}
+
+.slider-right .slide-right:nth-child(5).active {
+  animation-name: rightAnim5;
+}
+
+.slider-right .slide-right:nth-child(6).active {
+  animation-name: rightAnim6;
+}
+
+/* Анимация левого слайда */
+@keyframes slideLeftAnimation {
+  0%, 100% {transform: translateX(0) scale(1);}
+  50% {transform: translateX(20px) scale(1.1);}
+}
+
+/* Разные анимации для правых слайдов */
+@keyframes rightAnim1 {
+  0%, 100% {transform: rotate(0deg);}
+  50% {transform: rotate(10deg);}
+}
+
+@keyframes rightAnim2 {
+  0%, 100% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+}
+
+@keyframes rightAnim3 {
+  0%, 100% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+}
+
+@keyframes rightAnim4 {
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0.6;}
+}
+
+@keyframes rightAnim5 {
+  0%, 100% {transform: translateX(0);}
+  50% {transform: translateX(15px);}
+}
+
+@keyframes rightAnim6 {
+  0%, 100% {transform: skewX(0);}
+  50% {transform: skewX(10deg);}
+}
 
 
 
