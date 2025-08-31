@@ -1,6 +1,6 @@
 /* Сброс и базовые параметры */
 body {
-    background-color: beige; /* насыщенный глубокий темно-коричневый */
+    background-color: #f1efdd;; /* насыщенный глубокий темно-коричневый */
     font-family: 'Fira Sans', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -134,7 +134,7 @@ header {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    height: 40px;
+    height: 44px;
 
     filter:
       drop-shadow(0 0 6px #F4A261)
@@ -562,7 +562,8 @@ header {
 
 /* -------- Категории товаров -------- */
 .categories-section {
-    padding: 2rem 0;
+    padding-top: 5rem;
+    padding-bottom: 30px;
     background-color: #f1efdd;
     text-align: center;
 }
@@ -892,11 +893,13 @@ header {
   flex-shrink: 0;
     margin-top: 21px;
 }
+
+
 .slider-container {
   width: 1450px;
   height: 500px; /* высота контейнера */
   display: flex;
-  gap: 4px; /* минимальный общий отступ между панелями */
+  gap: 30px; /* минимальный общий отступ между панелями */
   justify-content: center;
   text-align: center;
   margin: 40px auto 0;
@@ -912,7 +915,7 @@ header {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 0 15px #0008;
+  /*box-shadow: 0 0 15px #0008;*/
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -923,7 +926,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100% - 10px);
+  height: calc(100% - 0);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -992,7 +995,7 @@ header {
 
 /* Правая панель с 4 слайдами */
 .slider-right {
-  width: 60%;
+  width: 45%;
   height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1008,23 +1011,46 @@ header {
 }
 
 .slider-right .slide-right {
-  position: relative;
-  border-radius: 10px;
-  font-size: 1.75rem;
-  font-weight: bold;
+    position: relative;
+    border-radius: 10px;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    user-select: none;
+    overflow: hidden;
+    height: 90%;
+    padding-top: 10px;
+    padding-bottom: 4px;
+    box-sizing: border-box;
+    background: linear-gradient(11deg, #e9e9e9, rgb(235 216 213 / 52%), #fef6b27a);
+    animation-fill-mode: both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 23px;
+    margin-bottom: 84px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+.slide-right .slide-title {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* по горизонтали центр */
-  justify-content: flex-start; /* по вертикали от верха */
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+  z-index: 3;
   user-select: none;
+  pointer-events: none;
+  max-width: 90%;
+  white-space: nowrap;
   overflow: hidden;
-  height: 100%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  box-sizing: border-box;
-  background: linear-gradient(11deg, #e9e9e9, rgb(235 216 213 / 52%), #fef6b27a); /* фон, если изображение прозрачное */
-  animation-fill-mode: both;
+  text-overflow: ellipsis;
 }
 
 
@@ -1044,8 +1070,8 @@ header {
   background-color: rgba(255, 69, 0, 0.9);
   padding: 6px 12px;
   font-size: 0.95rem;
-  font-weight: 700;
-  border-radius: 12px;
+  font-weight: 600;
+  border-radius: 4px;
   color: #fff;
   cursor: pointer;
   user-select: none;

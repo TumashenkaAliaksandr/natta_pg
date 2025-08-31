@@ -10,7 +10,7 @@
     <!-- Подключите FontAwesome иконки в <head> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="{% static 'webapp/css/style.css' %}"/>
-    <link rel="icon" href="{% static 'webapp/svg/favicon.svg' %}" type="image/svg+xml" sizes="any"  />
+    <link rel="icon" href="{% static 'webapp/img/nat_favicon.png' %}" type="image/svg+xml" sizes="any"  />
 </head>
 <body>
 
@@ -25,7 +25,7 @@
 <header class="header">
     <div class="container header__container">
         <div class="logo">
-            <img src="{% static 'webapp/img/nat_logo.png' %}" alt="NATTA PG Логотип"/>
+            <img src="{% static 'webapp/img/logo_nat_nbg.png' %}" alt="NATTA PG Логотип"/>
         </div>
 
         <!-- Бургер чекбокс -->
@@ -66,12 +66,12 @@
         <!-- Выезжающее слева меню -->
         <nav class="nav">
             <div class="logo-nav">
-                <img src="{% static 'webapp/img/nat_logo.png' %}" alt="NATTA PG Логотип"/>
+                <img src="{% static 'webapp/img/logo_nat_nbg.png' %}" alt="NATTA PG Логотип"/>
             </div>
             <ul class="nav__list">
                 <li><a href="#" class="nav__link active"><i class="fas fa-flag"></i> Главная</a></li>
                 <li><a href="#products" class="nav__link"><i class="fas fa-shopping-bag"></i> Продукция</a></li>
-                <li><a href="#about" class="nav__link"><i class="fas fa-info-circle"></i> О компании</a></li>
+                <li><a href="#about" class="nav__link"><i class="fas fa-info-circle"></i> О нас</a></li>
                 <li><a href="#contacts" class="nav__link"><i class="fas fa-phone"></i> Контакты</a></li>
                 <li><a href="#news" class="nav__link"><i class="fas fa-newspaper"></i> Новости</a></li>
             </ul>
@@ -111,18 +111,22 @@
             <div class="slider-right">
                 <div class="slide slide-right active">
                     <img src="{% static 'webapp/img/nat_slider2_1.png' %}" alt="Слайд 1"/>
+                    <div class="slide-title">Название продукта</div>
                     <div class="buy-label">Купить</div>
                 </div>
                 <div class="slide slide-right">
-                    <img src="{% static 'webapp/img/nat_slider2_2.png' %}" alt="Слайд 2"/>
+                    <img src="{% static 'webapp/img/nat_slider2_2.png' %}" alt="Слайд 3"/>
+                    <div class="slide-title">Название продукта</div>
                     <div class="buy-label">Купить</div>
                 </div>
                 <div class="slide slide-right">
                     <img src="{% static 'webapp/img/nat_slider2_3.png' %}" alt="Слайд 3"/>
+                    <div class="slide-title">Название продукта</div>
                     <div class="buy-label">Купить</div>
                 </div>
                 <div class="slide slide-right">
                     <img src="{% static 'webapp/img/nat_slider2_4.png' %}" alt="Слайд 4"/>
+                    <div class="slide-title">Название продукта</div>
                     <div class="buy-label">Купить</div>
                 </div>
             </div>
