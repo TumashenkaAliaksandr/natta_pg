@@ -87,26 +87,51 @@
     <section class="slider-section">
         <div class="slider-container">
             <div class="slider-left">
-                <div class="slide slide-left active" style="background-color: #f44336;">Слайд 1</div>
-                <div class="slide slide-left" style="background-color: #3f51b5;">Слайд 2</div>
-                <div class="slide slide-left" style="background-color: #4caf50;">Слайд 3</div>
-                <div class="slide slide-left" style="background-color: #ff9800;">Слайд 4</div>
+                <div class="slide slide-left">
+                    <p>На фото: процесс изготовления заготовки и проверка специалистами
+                    качества</p>
+                    <img src="{% static 'webapp/img/nat_slide1.png' %}" alt="Слайд 1"/>
+                </div>
+                <div class="slide slide-left">
+                    <p>На фото: проверка заготовки руководством и её окончательное одобрение</p>
+                    <img src="{% static 'webapp/img/nat_slide2.png' %}" alt="Слайд 2"/>
+                </div>
+                <div class="slide slide-left">
+                    <p>На фото: продукция направляется на склад для хранения и дальнейшей
+                    обработки</p>
+                    <img src="{% static 'webapp/img/nat_slide3.png' %}" alt="Слайд 3"/>
+                </div>
+                <div class="slide slide-left">
+                    <p>На фото: готовая продукция поступает в магазины и выставляется на
+                    витрины</p>
+                    <img src="{% static 'webapp/img/nat_slide4.png' %}" alt="Слайд 4"/>
+                </div>
             </div>
-            <div class="slider-right">
-                <div class="slide slide-right active" style="background-color: #e91e63;">Слайд A</div>
-                <div class="slide slide-right" style="background-color: #2196f3;">Слайд B</div>
-                <div class="slide slide-right" style="background-color: #00bcd4;">Слайд C</div>
-                <div class="slide slide-right" style="background-color: #8bc34a;">Слайд D</div>
-                <div class="slide slide-right" style="background-color: #ff5722;">Слайд E</div>
-                <div class="slide slide-right" style="background-color: #9c27b0;">Слайд F</div>
-            </div>
-        </div>
 
+            <div class="slider-right">
+                <div class="slide slide-right active">
+                    <img src="{% static 'webapp/img/nat_slider2_1.png' %}" alt="Слайд 1"/>
+                    <div class="buy-label">Купить</div>
+                </div>
+                <div class="slide slide-right">
+                    <img src="{% static 'webapp/img/nat_slider2_2.png' %}" alt="Слайд 2"/>
+                    <div class="buy-label">Купить</div>
+                </div>
+                <div class="slide slide-right">
+                    <img src="{% static 'webapp/img/nat_slider2_3.png' %}" alt="Слайд 3"/>
+                    <div class="buy-label">Купить</div>
+                </div>
+                <div class="slide slide-right">
+                    <img src="{% static 'webapp/img/nat_slider2_4.png' %}" alt="Слайд 4"/>
+                    <div class="buy-label">Купить</div>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <section class="categories-section">
         <div class="container-main categories__container">
-            <h2 class="section-title-categories">Категории продукции</h2>
             <div class="categories-grid">
                 <div class="category-card">
                     <img src="{% static 'webapp/svg/nut-and-bolt-svgrepo-com.svg' %}" alt="Дюбели"
