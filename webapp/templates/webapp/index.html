@@ -249,6 +249,92 @@
         </div>
     </section>
 
+    <!-- Новости слайдер -->
+    <section class="news-slider-section">
+        <h2 class="section-title">Новости</h2>
+        <div class="news-slider-container">
+            <button class="slider-arrow left-arrow" aria-label="Предыдущие новости">&#10094;</button>
+
+            <div class="news-slider-track">
+                <div class="news-slide">
+                    <img src="news1.jpg" alt="Новость 1"/>
+                    <h3 class="news-title">Заголовок новости 1</h3>
+                    <p class="news-desc">Краткое описание новости номер один.</p>
+                    <div class="news-footer">
+                        <span class="news-date">01.09.2025</span>
+                        <a href="#" class="news-link">Перейти</a>
+                    </div>
+                </div>
+                <div class="news-slide">
+                    <img src="news2.jpg" alt="Новость 2"/>
+                    <h3 class="news-title">Заголовок новости 2</h3>
+                    <p class="news-desc">Краткое описание новости номер два.</p>
+                    <div class="news-footer">
+                        <span class="news-date">30.08.2025</span>
+                        <a href="#" class="news-link">Перейти</a>
+                    </div>
+                </div>
+                <div class="news-slide">
+                    <img src="news3.jpg" alt="Новость 3"/>
+                    <h3 class="news-title">Заголовок новости 3</h3>
+                    <p class="news-desc">Краткое описание новости номер три.</p>
+                    <div class="news-footer">
+                        <span class="news-date">28.08.2025</span>
+                        <a href="#" class="news-link">Перейти</a>
+                    </div>
+                </div>
+                <div class="news-slide">
+                    <img src="news4.jpg" alt="Новость 4"/>
+                    <h3 class="news-title">Заголовок новости 4</h3>
+                    <p class="news-desc">Краткое описание новости номер четыре.</p>
+                    <div class="news-footer">
+                        <span class="news-date">25.08.2025</span>
+                        <a href="#" class="news-link">Перейти</a>
+                    </div>
+                </div>
+
+                <!-- Дублируем слайды для эффекта бесконечной карусели -->
+                <div class="news-slide">
+                    <img src="news1.jpg" alt="Новость 1"/>
+                    <h3 class="news-title">Заголовок новости 1</h3>
+                    <p class="news-desc">Краткое описание новости номер один.</p>
+                    <div class="news-footer">
+                        <span class="news-date">01.09.2025</span>
+                        <a href="#" class="news-link">Перейти</a>
+                    </div>
+                </div>
+                <div class="news-slide">
+                    <img src="news2.jpg" alt="Новость 2"/>
+                    <h3 class="news-title">Заголовок новости 2</h3>
+                    <p class="news-desc">Краткое описание новости номер два.</p>
+                    <div class="news-footer">
+                        <span class="news-date">30.08.2025</span>
+                        <a href="#" class="news-link">Перейти</a>
+                    </div>
+                </div>
+                <div class="news-slide">
+                    <img src="news3.jpg" alt="Новость 3"/>
+                    <h3 class="news-title">Заголовок новости 3</h3>
+                    <p class="news-desc">Краткое описание новости номер три.</p>
+                    <div class="news-footer">
+                        <span class="news-date">28.08.2025</span>
+                        <a href="#" class="news-link">Перейти</a>
+                    </div>
+                </div>
+                <div class="news-slide">
+                    <img src="news4.jpg" alt="Новость 4"/>
+                    <h3 class="news-title">Заголовок новости 4</h3>
+                    <p class="news-desc">Краткое описание новости номер четыре.</p>
+                    <div class="news-footer">
+                        <span class="news-date">25.08.2025</span>
+                        <a href="#" class="news-link">Перейти</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="slider-arrow right-arrow" aria-label="Следующие новости">&#10095;</button>
+        </div>
+    </section>
 
     <!-- Блок контактов и карта -->
     <section id="contacts" class="contacts-section">
@@ -297,6 +383,7 @@
     </section>
 
 
+
 </main>
 
 
@@ -305,7 +392,7 @@
         <!-- Логотип -->
         <div class="footer-logo">
             <a href="/">
-                <img src="{% static 'webapp/img/nat_logo.png' %}" alt="Пластик групп Логотип"/>
+                <img src="{% static 'webapp/img/logo_nat_nbg.png' %}" alt="Пластик групп Логотип"/>
             </a>
         </div>
 
@@ -346,6 +433,7 @@
 
 <script src="{% static 'webapp/js/main.js' %}"></script>
 <script src="{% static 'webapp/js/main_slider.js' %}"></script>
+<script src="{% static 'webapp/js/news_slider.js' %}"></script>
 
 <script>
     // Скрипт для мобильного меню
