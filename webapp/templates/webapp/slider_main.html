@@ -1,0 +1,56 @@
+{% load static %}
+
+<section class="slider-section">
+    <div class="slider-container">
+        <div class="slider-left">
+  <div class="slide-left slide-1 active">
+    <p>На фото: процесс изготовления заготовки и проверка специалистами качества</p>
+    <img src="{% static 'webapp/img/nat_slide1.png' %}" alt="Слайд 1" />
+  </div>
+  <div class="slide-left slide-2">
+    <p>На фото: проверка заготовки руководством и её окончательное одобрение</p>
+    <img src="{% static 'webapp/img/nat_slide2.png' %}" alt="Слайд 2" />
+  </div>
+  <div class="slide-left slide-3">
+    <p>На фото: продукция направляется на склад для хранения и дальнейшей обработки</p>
+    <img src="{% static 'webapp/img/nat_slide3.png' %}" alt="Слайд 3" />
+  </div>
+  <div class="slide-left slide-4">
+    <p>На фото: готовая продукция поступает в магазины и выставляется на витрины</p>
+    <img src="{% static 'webapp/img/nat_slide4.png' %}" alt="Слайд 4" />
+  </div>
+
+  <button class="slider-btn prev-btn">&#10094;</button>
+  <button class="slider-btn next-btn">&#10095;</button>
+</div>
+
+
+        <div class="slider-right">
+            <div class="slide slide-right active">
+                <img src="{% static 'webapp/img/nat_slider2_1.png' %}" alt="Слайд 1"/>
+                <div class="label-hit">ХИТ</div>
+                <div class="slide-title">Название продукта</div>
+                <div class="buy-label">Купить</div>
+            </div>
+            <div class="slide slide-right">
+                <img src="{% static 'webapp/img/nat_slider2_2.png' %}" alt="Слайд 3"/>
+                <div class="label-hit">ХИТ</div>
+                <div class="slide-title">Название продукта</div>
+                <div class="buy-label">Купить</div>
+            </div>
+            <div class="slide slide-right">
+                <img src="{% static 'webapp/img/nat_slider2_3.png' %}" alt="Слайд 3"/>
+                <div class="label-hit">TOP</div>
+                <div class="slide-title">Название продукта</div>
+                <div class="buy-label">Купить</div>
+            </div>
+            <div class="slide slide-right">
+                <div class="label-hit">TOP</div>
+                <img src="{% static 'webapp/img/nat_slider2_4.png' %}" alt="Слайд 4"/>
+                <div class="slide-title">Название продукта</div>
+                <div class="buy-label">Купить</div>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -997,91 +997,123 @@ header {
   padding-top: 5px;   /* минимальные отступы сверху */
   padding-bottom: 5px; /* минимальные отступы снизу */
 }
-
-/* Левая панель с одним слайдом */
 .slider-left {
   width: 40%;
   height: 100%;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  /*box-shadow: 0 0 15px #0008;*/
-  padding-top: 5px;
-  padding-bottom: 5px;
+  perspective: 1200px;
+  user-select: none;
+  background: #f5f5f5;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-/* Стили слайдов */
-.slider-left .slide-left {
+.slide-left {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
-  height: calc(100% - 0);
+  height: 100%;
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  user-select: none;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 1s ease, transform 1s ease;
-  z-index: 0;
-  transform: scale(0.97) translateY(4px);
+  background: linear-gradient(315deg, #e9e9e9, rgb(235 216 213 / 52%), #e9de7e7a);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 30px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: opacity 0.8s ease;
+  font-weight: 600;
 }
 
-/* Активный слайд с новой анимацией */
-.slider-left .slide-left.active {
+.slide-left.active {
   opacity: 1;
   pointer-events: auto;
   z-index: 1;
-  animation: leftSlideGentleAnimation 10s ease-in-out infinite;
 }
 
-/* Картинка внутри слайда */
-.slider-left .slide-left img {
-  width: 100%;
-  height: 100%;
+/* Текст под фото */
+.slide-left p {
+  margin: 0;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.9);
+  width: 80%;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #333;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 2;
+    top: 80px;
+}
+
+/* Изображение */
+.slide-left img {
+  width: 90%;
+  max-height: 90%;
   object-fit: cover;
   border-radius: 10px;
-  pointer-events: none;
+  margin-bottom: 25px;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
 }
 
-.slider-left .slide-left p {
-  margin: 10px 15px 8px; /* отступы вокруг текста */
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: #222;
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 10px 10px 0 0;
-  text-align: center;
-  user-select: none;
-  flex-shrink: 0; /* не сжимается */
-  padding: 10px 15px;
-    position: absolute;
+/* Кнопки */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 102, 0, 0.9);
+  border: none;
+  outline: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 24px;
+  box-shadow: 0 2px 8px rgb(255 102 0 / 0.5);
+  z-index: 10;
+  transition: background-color 0.3s ease;
 }
 
-/* Новая нежная анимация левого слайда */
-@keyframes leftSlideGentleAnimation {
-  0%, 100% {
-    transform: scale(1) translateY(0);
-    filter: drop-shadow(0 0 5px rgba(255, 69, 0, 0.4));
-  }
-  25% {
-    transform: scale(1.03) translateY(-5px);
-    filter: drop-shadow(0 4px 8px rgba(255, 69, 0, 0.6));
-  }
-  50% {
-    transform: scale(1.05) translateY(-8px);
-    filter: drop-shadow(0 6px 12px rgba(255, 69, 0, 0.75));
-  }
-  75% {
-    transform: scale(1.02) translateY(-3px);
-    filter: drop-shadow(0 3px 6px rgba(255, 69, 0, 0.5));
-  }
+.slider-btn:hover {
+  background: #ff6600;
 }
 
+.prev-btn {
+  left: 12px;
+}
+
+.next-btn {
+  right: 12px;
+}
+
+/* 3D прокрутка слайдов */
+/* Слайд слева удерживается под углом */
+.slide-left.exit-left {
+  animation: slideOutLeft 0.8s ease forwards;
+}
+
+.slide-left.enter-right {
+  animation: slideInRight 0.8s ease forwards;
+}
+
+@keyframes slideOutLeft {
+  0% {transform: translateX(0) rotateY(0deg) scale(1); opacity: 1;}
+  100% {transform: translateX(-100%) rotateY(45deg) scale(0.8); opacity: 0;}
+}
+
+@keyframes slideInRight {
+  0% {transform: translateX(100%) rotateY(-45deg) scale(0.8); opacity: 0;}
+  100% {transform: translateX(0) rotateY(0deg) scale(1); opacity: 1;}
+}
 
 /* Правая панель с 4 слайдами */
 .slider-right {
