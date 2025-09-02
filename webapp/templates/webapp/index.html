@@ -1,448 +1,333 @@
+{% extends 'main/base.html' %}
 {% load static %}
 
+{% block content %}
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Пластик групп - NATTA PG</title>
-    <!-- Подключите FontAwesome иконки в <head> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <link rel="stylesheet" href="{% static 'webapp/css/style.css' %}"/>
-    <link rel="icon" href="{% static 'webapp/img/nat_favicon.png' %}" type="image/svg+xml" sizes="any"  />
-</head>
-<body>
-
-<!-- Рекламная топ-полоска -->
-<div id="top-bar" class="top-bar" role="region" aria-label="Рекламное объявление">
-  <span>Лучшие предложения по производсву пластмасс! Звоните прямо сейчас!</span>
-  <button class="close-button" aria-label="Закрыть">&times;</button>
-</div>
-
-
-
-<header class="header">
-    <div class="container header__container">
-        <div class="logo">
-            <img src="{% static 'webapp/img/logo_nat_nbg.png' %}" alt="NATTA PG Логотип"/>
-        </div>
-
-        <!-- Бургер чекбокс -->
-        <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
-        <label for="menu-toggle" class="menu-icon" aria-label="Переключить меню">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-
-        <!-- Верхнее меню с поиском, телефонами, соцсетями и кнопкой -->
-        <div class="top-right-menu">
-            <div class="header-search">
-                <input type="text" placeholder="Поиск..." aria-label="Поиск по сайту"/>
-                <button aria-label="Искать"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="header-contacts">
-                <a href="tel:+74951234567" aria-label="Позвонить" class="contact-item">
-                    <i class="fas fa-phone-alt"></i> +7 (495) 123-45-67
-                </a>
-                <a href="mailto:info@example.com" aria-label="Написать email" class="contact-item">
-                    <i class="fas fa-envelope"></i> info@example.com
-                </a>
-            </div>
-            <div class="header-socials">
-                <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com" target="_blank" aria-label="Twitter" rel="noopener"><i
-                        class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" rel="noopener"><i
-                        class="fab fa-linkedin-in"></i></a>
-            </div>
-            <a href="tel:+74951234567" class="call-button">🕭 Заказать звонок</a> <!-- Новая кнопка -->
-        </div>
-
-        <!-- Выезжающее слева меню -->
-        <nav class="nav">
-            <div class="logo-nav">
-                <img src="{% static 'webapp/img/logo_nat_nbg.png' %}" alt="NATTA PG Логотип"/>
-            </div>
-            <ul class="nav__list">
-                <li><a href="#" class="nav__link active"><i class="fas fa-flag"></i> Главная</a></li>
-                <li><a href="#products" class="nav__link"><i class="fas fa-shopping-bag"></i> Продукция</a></li>
-                <li><a href="#about" class="nav__link"><i class="fas fa-info-circle"></i> О нас</a></li>
-                <li><a href="#contacts" class="nav__link"><i class="fas fa-phone"></i> Контакты</a></li>
-                <li><a href="#news" class="nav__link"><i class="fas fa-newspaper"></i> Новости</a></li>
-            </ul>
-
-            <a href="tel:+74951234567" class="call-button call-button--menu">Заказать звонок</a>
-            <!-- Кнопка внизу меню -->
-        </nav>
-    </div>
-</header>
-
-
-<main>
-    <section class="slider-section">
-        <div class="slider-container">
-            <div class="slider-left">
-                <div class="slide slide-left">
-                    <p>На фото: процесс изготовления заготовки и проверка специалистами
-                    качества</p>
-                    <img src="{% static 'webapp/img/nat_slide1.png' %}" alt="Слайд 1"/>
-                </div>
-                <div class="slide slide-left">
-                    <p>На фото: проверка заготовки руководством и её окончательное одобрение</p>
-                    <img src="{% static 'webapp/img/nat_slide2.png' %}" alt="Слайд 2"/>
-                </div>
-                <div class="slide slide-left">
-                    <p>На фото: продукция направляется на склад для хранения и дальнейшей
-                    обработки</p>
-                    <img src="{% static 'webapp/img/nat_slide3.png' %}" alt="Слайд 3"/>
-                </div>
-                <div class="slide slide-left">
-                    <p>На фото: готовая продукция поступает в магазины и выставляется на
-                    витрины</p>
-                    <img src="{% static 'webapp/img/nat_slide4.png' %}" alt="Слайд 4"/>
-                </div>
-            </div>
-
-            <div class="slider-right">
-                <div class="slide slide-right active">
-                    <img src="{% static 'webapp/img/nat_slider2_1.png' %}" alt="Слайд 1"/>
-                    <div class="slide-title">Название продукта</div>
-                    <div class="buy-label">Купить</div>
-                </div>
-                <div class="slide slide-right">
-                    <img src="{% static 'webapp/img/nat_slider2_2.png' %}" alt="Слайд 3"/>
-                    <div class="slide-title">Название продукта</div>
-                    <div class="buy-label">Купить</div>
-                </div>
-                <div class="slide slide-right">
-                    <img src="{% static 'webapp/img/nat_slider2_3.png' %}" alt="Слайд 3"/>
-                    <div class="slide-title">Название продукта</div>
-                    <div class="buy-label">Купить</div>
-                </div>
-                <div class="slide slide-right">
-                    <img src="{% static 'webapp/img/nat_slider2_4.png' %}" alt="Слайд 4"/>
-                    <div class="slide-title">Название продукта</div>
-                    <div class="buy-label">Купить</div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="categories-section">
-        <div class="container-main categories__container">
-            <div class="categories-grid">
-                <div class="category-card">
-                    <img src="{% static 'webapp/svg/nut-and-bolt-svgrepo-com.svg' %}" alt="Дюбели"
-                         class="category-icon"/>
-                    <p class="category-name">Дюбели</p>
-                </div>
-                <div class="category-card">
-                    <img src="{% static 'webapp/svg/cubes-in-stack-with-shadow-svgrepo-com.svg' %}" alt="Распределительные коробки"
-                         class="category-icon"/>
-                    <p class="category-name">Распредкоробки</p>
-                </div>
-                <div class="category-card">
-                    <img src="{% static 'webapp/svg/bolt-construction-nail-svgrepo-com.svg' %}" alt="Клинья" class="category-icon"/>
-                    <p class="category-name">Клинья</p>
-                </div>
-                <div class="category-card">
-                    <img src="{% static 'webapp/svg/electrical-crescent-svgrepo-com.svg' %}" alt="Заглушки" class="category-icon"/>
-                    <p class="category-name">Заглушки</p>
-                </div>
-                <!-- Добавьте остальные категории аналогично -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок продукции -->
-    <section id="products" class="categories-section">
-        <div class="container-main">
-            <h2 class="section-title">Наша продукция</h2>
-            <div class="products-grid">
-                <!-- пример карточки продукта -->
-                <article class="product-card">
-                    <img src="{% static 'webapp/img/natta_pg_dubel.png' %}" alt="Дюбель" class="product-image"/>
-                    <h3 class="product-title">Дюбель</h3>
-                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
-                    <p class="product-date">Дата: 2025</p>
-                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
-                </article>
-                <article class="product-card">
-                    <img src="{% static 'webapp/img/natta_pg_raspredcorob-nbg.png' %}" alt="Дюбель" class="product-image"/>
-                    <h3 class="product-title">Распредкоробки</h3>
-                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
-                    <p class="product-date">Дата: 2025</p>
-                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
-                </article>
-                <article class="product-card">
-                    <img src="{% static 'webapp/img/natta_pg_dubel.png' %}" alt="Дюбель" class="product-image"/>
-                    <h3 class="product-title">Дюбель</h3>
-                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
-                    <p class="product-date">Дата: 2025</p>
-                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
-                </article>
-                <article class="product-card">
-                    <img src="{% static 'webapp/img/natta_pg_raspredcorob-nbg.png' %}" alt="Дюбель" class="product-image"/>
-                    <h3 class="product-title">Распредкоробки</h3>
-                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
-                    <p class="product-date">Дата: 2025</p>
-                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
-                </article>
-                <article class="product-card">
-                    <img src="{% static 'webapp/img/natta_pg_dubel.png' %}" alt="Дюбель" class="product-image"/>
-                    <h3 class="product-title">Дюбель</h3>
-                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
-                    <p class="product-date">Дата: 2025</p>
-                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
-                </article>
-                <article class="product-card">
-                    <img src="{% static 'webapp/img/natta_pg_raspredcorob-nbg.png' %}" alt="Дюбель" class="product-image"/>
-                    <h3 class="product-title">Распредкоробки</h3>
-                    <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
-                    <p class="product-date">Дата: 2025</p>
-                    <a href="#" class="btn btn-primary btn-product">Перейти</a>
-                </article>
-                <!-- Добавьте аналогичные карточки для других продуктов -->
-            </div>
-            <div class="products-btn-wrapper">
-                <a href="#" class="btn btn-secondary see_all">Посмотреть все</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Блок преимуществ -->
-    <section class="advantages-section">
-        <div class="container-main">
-            <h2 class="section-title">Наши преимущества</h2>
-            <ul class="advantages-list horizontal-list">
-                <li>
-                    <img src="{% static 'webapp/svg/quality-certificate-award-svgrepo-com.svg' %}" alt="Высокое качество продукции"
-                         class="advantage-icon"/>
-                    <span>Высокое Качество</span>
-                </li>
-                <li>
-                    <img src="{% static 'webapp/svg/factory-svgrepo-com.svg' %}" alt="Современное производство"
-                         class="advantage-icon"/>
-                    <span>Современное производство</span>
-                </li>
-                <li>
-                    <img src="{% static 'webapp/svg/eco-greenpeace-no-plastic-2-svgrepo-com.svg' %}" alt="Экологичные материалы"
-                         class="advantage-icon"/>
-                    <span>Экологичные и материалы</span>
-                </li>
-                <li>
-                    <img src="{% static 'webapp/svg/agreement-bussiness-discount-svgrepo-com.svg' %}" alt="Индивидуальный подход"
-                         class="advantage-icon"/>
-                    <span>Индивидуальный подход</span>
-                </li>
-                <li>
-                    <img src="{% static 'webapp/svg/delivery-truck-box-delivery-svgrepo-com.svg' %}" alt="Доставка" class="advantage-icon"/>
-                    <span>Доставка по СНГ</span>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Новости слайдер -->
-    <section class="news-slider-section">
-        <h2 class="section-title">Новости</h2>
-        <div class="news-slider-container">
-            <button class="slider-arrow left-arrow" aria-label="Предыдущие новости">&#10094;</button>
-
-            <div class="news-slider-track">
-                <div class="news-slide">
-                    <img src="news1.jpg" alt="Новость 1"/>
-                    <h3 class="news-title">Заголовок новости 1</h3>
-                    <p class="news-desc">Краткое описание новости номер один.</p>
-                    <div class="news-footer">
-                        <span class="news-date">01.09.2025</span>
-                        <a href="#" class="news-link">Перейти</a>
+    <main>
+        <section class="slider-section">
+            <div class="slider-container">
+                <div class="slider-left">
+                    <div class="slide slide-left">
+                        <p>На фото: процесс изготовления заготовки и проверка специалистами
+                            качества</p>
+                        <img src="{% static 'webapp/img/nat_slide1.png' %}" alt="Слайд 1"/>
                     </div>
-                </div>
-                <div class="news-slide">
-                    <img src="news2.jpg" alt="Новость 2"/>
-                    <h3 class="news-title">Заголовок новости 2</h3>
-                    <p class="news-desc">Краткое описание новости номер два.</p>
-                    <div class="news-footer">
-                        <span class="news-date">30.08.2025</span>
-                        <a href="#" class="news-link">Перейти</a>
+                    <div class="slide slide-left">
+                        <p>На фото: проверка заготовки руководством и её окончательное одобрение</p>
+                        <img src="{% static 'webapp/img/nat_slide2.png' %}" alt="Слайд 2"/>
                     </div>
-                </div>
-                <div class="news-slide">
-                    <img src="news3.jpg" alt="Новость 3"/>
-                    <h3 class="news-title">Заголовок новости 3</h3>
-                    <p class="news-desc">Краткое описание новости номер три.</p>
-                    <div class="news-footer">
-                        <span class="news-date">28.08.2025</span>
-                        <a href="#" class="news-link">Перейти</a>
+                    <div class="slide slide-left">
+                        <p>На фото: продукция направляется на склад для хранения и дальнейшей
+                            обработки</p>
+                        <img src="{% static 'webapp/img/nat_slide3.png' %}" alt="Слайд 3"/>
                     </div>
-                </div>
-                <div class="news-slide">
-                    <img src="news4.jpg" alt="Новость 4"/>
-                    <h3 class="news-title">Заголовок новости 4</h3>
-                    <p class="news-desc">Краткое описание новости номер четыре.</p>
-                    <div class="news-footer">
-                        <span class="news-date">25.08.2025</span>
-                        <a href="#" class="news-link">Перейти</a>
+                    <div class="slide slide-left">
+                        <p>На фото: готовая продукция поступает в магазины и выставляется на
+                            витрины</p>
+                        <img src="{% static 'webapp/img/nat_slide4.png' %}" alt="Слайд 4"/>
                     </div>
                 </div>
 
-                <!-- Дублируем слайды для эффекта бесконечной карусели -->
-                <div class="news-slide">
-                    <img src="news1.jpg" alt="Новость 1"/>
-                    <h3 class="news-title">Заголовок новости 1</h3>
-                    <p class="news-desc">Краткое описание новости номер один.</p>
-                    <div class="news-footer">
-                        <span class="news-date">01.09.2025</span>
-                        <a href="#" class="news-link">Перейти</a>
+                <div class="slider-right">
+                    <div class="slide slide-right active">
+                        <img src="{% static 'webapp/img/nat_slider2_1.png' %}" alt="Слайд 1"/>
+                        <div class="label-hit">ХИТ</div>
+                        <div class="slide-title">Название продукта</div>
+                        <div class="buy-label">Купить</div>
+                    </div>
+                    <div class="slide slide-right">
+                        <img src="{% static 'webapp/img/nat_slider2_2.png' %}" alt="Слайд 3"/>
+                        <div class="label-hit">ХИТ</div>
+                        <div class="slide-title">Название продукта</div>
+                        <div class="buy-label">Купить</div>
+                    </div>
+                    <div class="slide slide-right">
+                        <img src="{% static 'webapp/img/nat_slider2_3.png' %}" alt="Слайд 3"/>
+                        <div class="label-hit">TOP</div>
+                        <div class="slide-title">Название продукта</div>
+                        <div class="buy-label">Купить</div>
+                    </div>
+                    <div class="slide slide-right">
+                        <div class="label-hit">TOP</div>
+                        <img src="{% static 'webapp/img/nat_slider2_4.png' %}" alt="Слайд 4"/>
+                        <div class="slide-title">Название продукта</div>
+                        <div class="buy-label">Купить</div>
                     </div>
                 </div>
-                <div class="news-slide">
-                    <img src="news2.jpg" alt="Новость 2"/>
-                    <h3 class="news-title">Заголовок новости 2</h3>
-                    <p class="news-desc">Краткое описание новости номер два.</p>
-                    <div class="news-footer">
-                        <span class="news-date">30.08.2025</span>
-                        <a href="#" class="news-link">Перейти</a>
+
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <div class="container-main categories__container">
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <img src="{% static 'webapp/svg/nut-and-bolt-svgrepo-com.svg' %}" alt="Дюбели"
+                             class="category-icon"/>
+                        <p class="category-name">Дюбели</p>
                     </div>
-                </div>
-                <div class="news-slide">
-                    <img src="news3.jpg" alt="Новость 3"/>
-                    <h3 class="news-title">Заголовок новости 3</h3>
-                    <p class="news-desc">Краткое описание новости номер три.</p>
-                    <div class="news-footer">
-                        <span class="news-date">28.08.2025</span>
-                        <a href="#" class="news-link">Перейти</a>
+                    <div class="category-card">
+                        <img src="{% static 'webapp/svg/cubes-in-stack-with-shadow-svgrepo-com.svg' %}"
+                             alt="Распределительные коробки"
+                             class="category-icon"/>
+                        <p class="category-name">Распредкоробки</p>
                     </div>
-                </div>
-                <div class="news-slide">
-                    <img src="news4.jpg" alt="Новость 4"/>
-                    <h3 class="news-title">Заголовок новости 4</h3>
-                    <p class="news-desc">Краткое описание новости номер четыре.</p>
-                    <div class="news-footer">
-                        <span class="news-date">25.08.2025</span>
-                        <a href="#" class="news-link">Перейти</a>
+                    <div class="category-card">
+                        <img src="{% static 'webapp/svg/bolt-construction-nail-svgrepo-com.svg' %}" alt="Клинья"
+                             class="category-icon"/>
+                        <p class="category-name">Клинья</p>
                     </div>
+                    <div class="category-card">
+                        <img src="{% static 'webapp/svg/electrical-crescent-svgrepo-com.svg' %}" alt="Заглушки"
+                             class="category-icon"/>
+                        <p class="category-name">Заглушки</p>
+                    </div>
+                    <!-- Добавьте остальные категории аналогично -->
                 </div>
             </div>
+        </section>
 
-            <button class="slider-arrow right-arrow" aria-label="Следующие новости">&#10095;</button>
-        </div>
-    </section>
+        <!-- Блок продукции -->
 
-    <!-- Блок контактов и карта -->
-    <section id="contacts" class="contacts-section">
-        <div class="container-main">
-            <h2 class="section-title">Контакты</h2>
-            <div class="contacts-wrapper">
-                <div class="contacts-info">
-                    <h2 class="section-title-contact-form">Отправить заказ</h2>
-                    <form class="order-form" action="#" method="POST">
-                        <label for="name">Имя</label>
-                        <input type="text" id="name" name="name" required placeholder="Ваше имя"/>
-
-                        <label for="phone">Телефон</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__"/>
-
-                        <label for="product">Продукт</label>
-                        <select id="product" name="product" required>
-                            <option value="">Выберите продукт</option>
-                            <option value="dyubel">Дюбель</option>
-                            <option value="boxes">Распределительные коробки</option>
-                            <option value="klins">Клинья</option>
-                            <option value="plugs">Заглушки</option>
-                        </select>
-
-                        <label for="quantity">Количество</label>
-                        <input type="number" id="quantity" name="quantity" min="1" required placeholder="1"/>
-
-                        <label for="comments">Комментарий</label>
-                        <textarea id="comments" name="comments" rows="3"
-                                  placeholder="Дополнительная информация"></textarea>
-
-                        <button type="submit" class="btn btn-primary">Отправить заказ</button>
-                    </form>
+        <section id="products" class="categories-section">
+            <div class="container-main">
+                <h2 class="section-title">Наша продукция</h2>
+                <div class="products-slider-wrapper">
+                    <button class="slider-btn left-btn" aria-label="Предыдущие товары">&#10094;</button>
+                    <div class="products-grid products-slider">
+                        <!-- Ваши карточки -->
+                        <article class="product-card">
+                            <img src="{% static 'webapp/img/natta_pg_dubel.png' %}" alt="Дюбель" class="product-image"/>
+                            <h3 class="product-title">Дюбель</h3>
+                            <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                            <p class="product-date">Дата: 2025</p>
+                            <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                        </article>
+                        <!-- остальные карточки (можно дублировать для демонстрации) -->
+                        <article class="product-card">
+                            <img src="{% static 'webapp/img/natta_pg_raspredcorob-nbg.png' %}" alt="Распредкоробки"
+                                 class="product-image"/>
+                            <h3 class="product-title">Распредкоробки</h3>
+                            <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                            <p class="product-date">Дата: 2025</p>
+                            <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                        </article>
+                        <article class="product-card">
+                            <img src="{% static 'webapp/img/natta_pg_dubel.png' %}" alt="Дюбель" class="product-image"/>
+                            <h3 class="product-title">Дюбель</h3>
+                            <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                            <p class="product-date">Дата: 2025</p>
+                            <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                        </article>
+                        <!-- остальные карточки (можно дублировать для демонстрации) -->
+                        <article class="product-card">
+                            <img src="{% static 'webapp/img/natta_pg_raspredcorob-nbg.png' %}" alt="Распредкоробки"
+                                 class="product-image"/>
+                            <h3 class="product-title">Распредкоробки</h3>
+                            <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                            <p class="product-date">Дата: 2025</p>
+                            <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                        </article>
+                        <article class="product-card">
+                            <img src="{% static 'webapp/img/natta_pg_dubel.png' %}" alt="Дюбель" class="product-image"/>
+                            <h3 class="product-title">Дюбель</h3>
+                            <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                            <p class="product-date">Дата: 2025</p>
+                            <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                        </article>
+                        <!-- остальные карточки (можно дублировать для демонстрации) -->
+                        <article class="product-card">
+                            <img src="{% static 'webapp/img/natta_pg_raspredcorob-nbg.png' %}" alt="Распредкоробки"
+                                 class="product-image"/>
+                            <h3 class="product-title">Распредкоробки</h3>
+                            <p class="product-desc">Надёжные дюбеля для всех типов поверхностей.</p>
+                            <p class="product-date">Дата: 2025</p>
+                            <a href="#" class="btn btn-primary btn-product">Перейти</a>
+                        </article>
+                        <!-- ... остальные карточки ... -->
+                    </div>
+                    <button class="slider-btn right-btn" aria-label="Следующие товары">&#10095;</button>
                 </div>
-                <div class="contacts-map">
-                    <!-- Ваша карта (например iframe Google Maps) -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d144538.97856585667!2d28.44601600718626!3d55.52502639786686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c4855711e214cf%3A0x73330f4b118c705a!2z0J3QvtCy0L7Qv9C-0LvQvtGG0LosINCS0LjRgtC10LHRgdC60LDRjyDQvtCx0LvQsNGB0YLRjA!5e0!3m2!1sru!2sby!4v1756538907651!5m2!1sru!2sby" width="720" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="products-btn-wrapper">
+                    <a href="#" class="btn btn-secondary see_all">Посмотреть все</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Блок преимуществ -->
+        <section class="advantages-section">
+            <div class="container-main">
+                <h2 class="section-title">Наши преимущества</h2>
+                <ul class="advantages-list horizontal-list">
+                    <li>
+                        <img src="{% static 'webapp/svg/quality-certificate-award-svgrepo-com.svg' %}"
+                             alt="Высокое качество продукции"
+                             class="advantage-icon"/>
+                        <span>Высокое Качество</span>
+                    </li>
+                    <li>
+                        <img src="{% static 'webapp/svg/factory-svgrepo-com.svg' %}" alt="Современное производство"
+                             class="advantage-icon"/>
+                        <span>Современное производство</span>
+                    </li>
+                    <li>
+                        <img src="{% static 'webapp/svg/eco-greenpeace-no-plastic-2-svgrepo-com.svg' %}"
+                             alt="Экологичные материалы"
+                             class="advantage-icon"/>
+                        <span>Экологичные и материалы</span>
+                    </li>
+                    <li>
+                        <img src="{% static 'webapp/svg/agreement-bussiness-discount-svgrepo-com.svg' %}"
+                             alt="Индивидуальный подход"
+                             class="advantage-icon"/>
+                        <span>Индивидуальный подход</span>
+                    </li>
+                    <li>
+                        <img src="{% static 'webapp/svg/delivery-truck-box-delivery-svgrepo-com.svg' %}" alt="Доставка"
+                             class="advantage-icon"/>
+                        <span>Доставка по СНГ</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Новости слайдер -->
+        <section class="news-slider-section">
+            <h2 class="section-title">Новости</h2>
+            <div class="news-slider-container">
+                <button class="slider-arrow left-arrow" aria-label="Предыдущие новости">&#10094;</button>
+
+                <div class="news-slider-track">
+                    <div class="news-slide">
+                        <img src="news1.jpg" alt="Новость 1"/>
+                        <h3 class="news-title">Заголовок новости 1</h3>
+                        <p class="news-desc">Краткое описание новости номер один.</p>
+                        <div class="news-footer">
+                            <span class="news-date">01.09.2025</span>
+                            <a href="#" class="news-link">Перейти</a>
+                        </div>
+                    </div>
+                    <div class="news-slide">
+                        <img src="news2.jpg" alt="Новость 2"/>
+                        <h3 class="news-title">Заголовок новости 2</h3>
+                        <p class="news-desc">Краткое описание новости номер два.</p>
+                        <div class="news-footer">
+                            <span class="news-date">30.08.2025</span>
+                            <a href="#" class="news-link">Перейти</a>
+                        </div>
+                    </div>
+                    <div class="news-slide">
+                        <img src="news3.jpg" alt="Новость 3"/>
+                        <h3 class="news-title">Заголовок новости 3</h3>
+                        <p class="news-desc">Краткое описание новости номер три.</p>
+                        <div class="news-footer">
+                            <span class="news-date">28.08.2025</span>
+                            <a href="#" class="news-link">Перейти</a>
+                        </div>
+                    </div>
+                    <div class="news-slide">
+                        <img src="news4.jpg" alt="Новость 4"/>
+                        <h3 class="news-title">Заголовок новости 4</h3>
+                        <p class="news-desc">Краткое описание новости номер четыре.</p>
+                        <div class="news-footer">
+                            <span class="news-date">25.08.2025</span>
+                            <a href="#" class="news-link">Перейти</a>
+                        </div>
+                    </div>
+
+                    <!-- Дублируем слайды для эффекта бесконечной карусели -->
+                    <div class="news-slide">
+                        <img src="news1.jpg" alt="Новость 1"/>
+                        <h3 class="news-title">Заголовок новости 1</h3>
+                        <p class="news-desc">Краткое описание новости номер один.</p>
+                        <div class="news-footer">
+                            <span class="news-date">01.09.2025</span>
+                            <a href="#" class="news-link">Перейти</a>
+                        </div>
+                    </div>
+                    <div class="news-slide">
+                        <img src="news2.jpg" alt="Новость 2"/>
+                        <h3 class="news-title">Заголовок новости 2</h3>
+                        <p class="news-desc">Краткое описание новости номер два.</p>
+                        <div class="news-footer">
+                            <span class="news-date">30.08.2025</span>
+                            <a href="#" class="news-link">Перейти</a>
+                        </div>
+                    </div>
+                    <div class="news-slide">
+                        <img src="news3.jpg" alt="Новость 3"/>
+                        <h3 class="news-title">Заголовок новости 3</h3>
+                        <p class="news-desc">Краткое описание новости номер три.</p>
+                        <div class="news-footer">
+                            <span class="news-date">28.08.2025</span>
+                            <a href="#" class="news-link">Перейти</a>
+                        </div>
+                    </div>
+                    <div class="news-slide">
+                        <img src="news4.jpg" alt="Новость 4"/>
+                        <h3 class="news-title">Заголовок новости 4</h3>
+                        <p class="news-desc">Краткое описание новости номер четыре.</p>
+                        <div class="news-footer">
+                            <span class="news-date">25.08.2025</span>
+                            <a href="#" class="news-link">Перейти</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="slider-arrow right-arrow" aria-label="Следующие новости">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Блок контактов и карта -->
+        <section id="contacts" class="contacts-section">
+            <div class="container-main">
+                <h2 class="section-title">Контакты</h2>
+                <div class="contacts-wrapper">
                     <div class="contacts-info">
-                    <p>Адрес: г. Москва, ул. Примерная, д. 1</p>
-                    <p>Телефон: +7 (495) 123-45-67</p>
-                    <p>Email: info@plastikgroup.ru</p>
-                </div>
+                        <h2 class="section-title-contact-form">Отправить заказ</h2>
+                        <form class="order-form" action="#" method="POST">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" name="name" required placeholder="Ваше имя"/>
+
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__"/>
+
+                            <label for="product">Продукт</label>
+                            <select id="product" name="product" required>
+                                <option value="">Выберите продукт</option>
+                                <option value="dyubel">Дюбель</option>
+                                <option value="boxes">Распределительные коробки</option>
+                                <option value="klins">Клинья</option>
+                                <option value="plugs">Заглушки</option>
+                            </select>
+
+                            <label for="quantity">Количество</label>
+                            <input type="number" id="quantity" name="quantity" min="1" required placeholder="1"/>
+
+                            <label for="comments">Комментарий</label>
+                            <textarea id="comments" name="comments" rows="3"
+                                      placeholder="Дополнительная информация"></textarea>
+
+                            <button type="submit" class="btn btn-primary">Отправить заказ</button>
+                        </form>
+                    </div>
+                    <div class="contacts-map">
+                        <!-- Ваша карта (например iframe Google Maps) -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d144538.97856585667!2d28.44601600718626!3d55.52502639786686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c4855711e214cf%3A0x73330f4b118c705a!2z0J3QvtCy0L7Qv9C-0LvQvtGG0LosINCS0LjRgtC10LHRgdC60LDRjyDQvtCx0LvQsNGB0YLRjA!5e0!3m2!1sru!2sby!4v1756538907651!5m2!1sru!2sby"
+                                width="720" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="contacts-info">
+                            <p>Адрес: г. Москва, ул. Примерная, д. 1</p>
+                            <p>Телефон: +7 (495) 123-45-67</p>
+                            <p>Email: info@plastikgroup.ru</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
+    </main>
 
-</main>
-
-
-<footer class="footer">
-    <div class="container footer__container">
-        <!-- Логотип -->
-        <div class="footer-logo">
-            <a href="/">
-                <img src="{% static 'webapp/img/logo_nat_nbg.png' %}" alt="Пластик групп Логотип"/>
-            </a>
-        </div>
-
-        <!-- Адрес -->
-        <address class="footer-address">
-            123456, Москва, ул. Примерная, д. 1
-        </address>
-
-        <!-- Основное меню -->
-        <nav class="footer-nav">
-            <ul>
-                <li><a href="#" class="footer-link"><i class="fas fa-flag"></i> Главная</a></li>
-                <li><a href="#products" class="footer-link"><i class="fas fa-shopping-bag"></i> Продукция</a></li>
-                <li><a href="#about" class="footer-link"><i class="fas fa-info-circle"></i> О компании</a></li>
-                <li><a href="#contacts" class="footer-link"><i class="fas fa-phone"></i> Контакты</a></li>
-                <li><a href="#news" class="footer-link"><i class="fas fa-newspaper"></i> Новости</a></li>
-            </ul>
-        </nav>
-
-        <!-- Социальные сети -->
-        <div class="footer-socials">
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener"><i
-                    class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com" target="_blank" aria-label="Twitter" rel="noopener"><i
-                    class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener"><i
-                    class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" rel="noopener"><i
-                    class="fab fa-linkedin-in"></i></a>
-        </div>
-    </div>
-
-    <p class="footer-copyright">
-        © 2025 Пластик групп. Все права защищены.
-    </p>
-</footer>
-
-
-<script src="{% static 'webapp/js/main.js' %}"></script>
-<script src="{% static 'webapp/js/main_slider.js' %}"></script>
-<script src="{% static 'webapp/js/news_slider.js' %}"></script>
-
-<script>
-    // Скрипт для мобильного меню
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
-
-    menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('nav--active');
-    });
-</script>
-</body>
-</html>
+{% endblock %}
