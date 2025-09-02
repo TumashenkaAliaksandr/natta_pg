@@ -3,42 +3,68 @@ document.addEventListener('DOMContentLoaded', () => {
   const leftArrow = document.querySelector('.left-arrow');
   const rightArrow = document.querySelector('.right-arrow');
 
-  let paused = false;
-  let animationSpeed = 30; // секунд на полный цикл
-  let progress = 0;
-  let lastTimestamp = null;
+  if (!track || !leftArrow || !rightArrow) return;
 
-  function animateSlider(timestamp) {
-    if (!lastTimestamp) lastTimestamp = timestamp;
-    if (!paused) {
-      progress += (timestamp - lastTimestamp) / 1000;
-      if (progress > animationSpeed) progress = 0;
-      const percentage = -(progress / animationSpeed) * 50; // анимируем -50% по ширине
-      track.style.transform = `translateX(${percentage}%)`;
+  const slides = track.querySelectorAll('.news-slide');
+  const totalSlides = slides.length / 2; // половина, т.к. есть дубли
+  const slideWidth = slides[0].offsetWidth + 20; // ширина + gap
+
+  let currentIndex = 0;
+  let isAnimating = false;
+
+  // Изначально ставим в начало первого полного набора слайдов
+  track.scrollLeft = 0;
+
+  function goToSlide(index) {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    // Цикличность вперед / назад
+    if (index < 0) {
+      currentIndex = totalSlides - 1;
+      // Мгновенно переключаем scrollLeft в конец первого набора
+      track.style.scrollBehavior = 'auto';
+      track.scrollLeft = currentIndex * slideWidth;
+      // Легкий таймаут для плавного переключения
+      setTimeout(() => {
+        goToSlide(currentIndex - 1);
+      }, 50);
+      return;
     }
-    lastTimestamp = timestamp;
-    requestAnimationFrame(animateSlider);
+
+    if (index >= totalSlides) {
+      currentIndex = 0;
+      // Мгновенно переключаем scrollLeft в начало
+      track.style.scrollBehavior = 'auto';
+      track.scrollLeft = 0;
+      setTimeout(() => {
+        goToSlide(currentIndex + 1);
+      }, 50);
+      return;
+    }
+
+    currentIndex = index;
+    track.style.scrollBehavior = 'smooth';
+    track.scrollTo({
+      left: currentIndex * slideWidth,
+    });
+
+    // Обработка окончания анимации смещения
+    setTimeout(() => {
+      isAnimating = false;
+    }, 600); // время transition чуть больше 0.5s в CSS
   }
-  requestAnimationFrame(animateSlider);
 
   leftArrow.addEventListener('click', () => {
-    paused = true;
-    // смещаем вправо на длину слайдов
-    const computedStyle = window.getComputedStyle(track);
-    const matrix = new DOMMatrixReadOnly(computedStyle.transform);
-    let currentX = matrix.m41;
-    currentX += 320 + 20; // ширина слайда + margin * 2
-    track.style.transform = `translateX(${currentX}px)`;
-    setTimeout(() => paused = false, 800);
+    if (!isAnimating) goToSlide(currentIndex - 1);
   });
 
   rightArrow.addEventListener('click', () => {
-    paused = true;
-    const computedStyle = window.getComputedStyle(track);
-    const matrix = new DOMMatrixReadOnly(computedStyle.transform);
-    let currentX = matrix.m41;
-    currentX -= 320 + 20;
-    track.style.transform = `translateX(${currentX}px)`;
-    setTimeout(() => paused = false, 800);
+    if (!isAnimating) goToSlide(currentIndex + 1);
   });
+
+  // Автоматическая прокрутка каждые 3 секунды
+  setInterval(() => {
+    if (!isAnimating) goToSlide(currentIndex + 1);
+  }, 3000);
 });

@@ -4,31 +4,32 @@
 {% block content %}
 
     <main>
+
         {% include 'webapp/slider_main.html' %}
 
         <section class="categories-section">
             <div class="container-main categories__container">
                 <div class="categories-grid">
                     <div class="category-card">
-                        <img src="{% static 'webapp/svg/nut-and-bolt-svgrepo-com.svg' %}" alt="Дюбели"
+                        <img src="{% static 'webapp/svg/medicine-medical-health-healthcare-vitamin-pill-pharmacy-svgrepo-com.svg' %}" alt="Медицина"
                              class="category-icon"/>
-                        <p class="category-name">Дюбели</p>
+                        <p class="category-name">Медицина</p>
                     </div>
                     <div class="category-card">
-                        <img src="{% static 'webapp/svg/cubes-in-stack-with-shadow-svgrepo-com.svg' %}"
-                             alt="Распределительные коробки"
+                        <img src="{% static 'webapp/svg/hot-sales-discount-svgrepo-com.svg' %}"
+                             alt="Термостойкие"
                              class="category-icon"/>
-                        <p class="category-name">Распредкоробки</p>
+                        <p class="category-name">Термостойкие</p>
                     </div>
                     <div class="category-card">
-                        <img src="{% static 'webapp/svg/bolt-construction-nail-svgrepo-com.svg' %}" alt="Клинья"
+                        <img src="{% static 'webapp/svg/electric-bolt-svgrepo-com.svg' %}" alt="Электрика"
                              class="category-icon"/>
-                        <p class="category-name">Клинья</p>
+                        <p class="category-name">Электрика</p>
                     </div>
                     <div class="category-card">
-                        <img src="{% static 'webapp/svg/electrical-crescent-svgrepo-com.svg' %}" alt="Заглушки"
+                        <img src="{% static 'webapp/svg/house-repair-svgrepo-com.svg' %}" alt="Ремонт"
                              class="category-icon"/>
-                        <p class="category-name">Заглушки</p>
+                        <p class="category-name">Ремонт</p>
                     </div>
                     <!-- Добавьте остальные категории аналогично -->
                 </div>
@@ -36,10 +37,27 @@
         </section>
 
         <!-- Блок продукции -->
-
         <section id="products" class="categories-section">
             <div class="container-main">
                 <h2 class="section-title">Наша продукция</h2>
+
+        <div class="chips-wrapper">
+            <button class="chips-arrow left-arrow" aria-label="Предыдущие">‹</button>
+            <div class="chips-container">
+                <div class="chips-track">
+                    <button class="chip active" aria-pressed="true">Все</button>
+                    <button class="chip" aria-pressed="false">Дюбели</button>
+                    <button class="chip" aria-pressed="false">Распредкоробки</button>
+                    <button class="chip" aria-pressed="false">Клинья</button>
+                    <button class="chip" aria-pressed="false">Заглушки</button>
+                    <button class="chip" aria-pressed="false">Топ</button>
+                    <button class="chip" aria-pressed="false">Просмотрено</button>
+                    <button class="chip" aria-pressed="false">Новое для вас</button>
+                    <!-- другие чипсы по желанию -->
+                </div>
+            </div>
+            <button class="chips-arrow right-arrow" aria-label="Следующие">›</button>
+        </div>
                 <div class="products-slider-wrapper">
                     <button class="slider-btn left-btn" aria-label="Предыдущие товары">&#10094;</button>
                     <div class="products-grid products-slider">

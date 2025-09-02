@@ -7,10 +7,11 @@ document.querySelector('.close-button').addEventListener('click', () => {
   document.getElementById('top-bar').style.display = 'none';
 });
 
+
 document.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.slide-left');
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
+  const prevBtn = document.querySelector('.r-prev-btn');
+  const nextBtn = document.querySelector('.r-next-btn');
   let current = 0;
   let isAnimating = false;
 
@@ -22,29 +23,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const oldSlide = slides[current];
     const newSlide = slides[newIndex];
 
-    // Анимация выхода старого слайда налево
-    oldSlide.classList.remove('active', 'enter-right');
-    oldSlide.classList.add('exit-left');
+    // Убираем слушатели на старом слайде на случай повторного анимационого цикла
+    oldSlide.removeEventListener('animationend', onOldSlideEnd);
 
-    // Анимация появления нового слайда справа
-    newSlide.classList.remove('exit-left');
-    newSlide.classList.add('enter-right', 'active');
+    newSlide.classList.add('active');
 
-    // После анимации убрать классы выхода
-    oldSlide.addEventListener('animationend', () => {
-      oldSlide.classList.remove('exit-left');
+    // Функция окончания анимации старого слайда
+    function onOldSlideEnd() {
+      oldSlide.classList.remove('active', 'exit-left', 'exit-right');
       isAnimating = false;
-    }, { once: true });
+      oldSlide.removeEventListener('animationend', onOldSlideEnd);
+    }
+
+    // Начинаем анимацию выхода старого слайда
+    oldSlide.classList.add('exit-left');
+    oldSlide.addEventListener('animationend', onOldSlideEnd);
 
     current = newIndex;
   }
 
   prevBtn.addEventListener('click', () => {
+    if (isAnimating) return;
     const newIndex = (current - 1 + slides.length) % slides.length;
     showSlide(newIndex);
   });
 
   nextBtn.addEventListener('click', () => {
+    if (isAnimating) return;
     const newIndex = (current + 1) % slides.length;
     showSlide(newIndex);
   });

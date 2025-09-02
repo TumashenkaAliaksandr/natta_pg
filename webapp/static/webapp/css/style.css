@@ -1054,18 +1054,18 @@ header {
 
 /* Изображение */
 .slide-left img {
-  width: 90%;
-  max-height: 90%;
+  width: 94%;
+  max-height: 94%;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   backface-visibility: hidden;
   transform-style: preserve-3d;
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
 }
 
 /* Кнопки */
-.slider-btn {
+.r-slider-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1083,15 +1083,15 @@ header {
   transition: background-color 0.3s ease;
 }
 
-.slider-btn:hover {
+.r-slider-btn:hover {
   background: #ff6600;
 }
 
-.prev-btn {
+.r-prev-btn {
   left: 12px;
 }
 
-.next-btn {
+.r-next-btn {
   right: 12px;
 }
 
@@ -1366,6 +1366,74 @@ header {
 
 
 
+.chips-wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 900px;
+  margin: 20px auto;
+  gap: 8px;
+  user-select: none;
+}
+
+.chips-arrow {
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 8px 12px;
+  color: #ff6600;
+  transition: color 0.3s ease;
+}
+
+.chips-arrow:hover {
+  color: #e05500;
+}
+
+.chips-container {
+  overflow-x: auto;
+  flex-grow: 1;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chips-container::-webkit-scrollbar {
+  display: none;
+}
+
+.chips-track {
+  display: flex;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.chip {
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 14px;
+  color: #444;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.chip:hover {
+  background-color: #ffe6cc;
+  border-color: #ffac33;
+  color: #ff6600;
+}
+
+.chip.active {
+  background-color: #ff6600;
+  border-color: #cc5200;
+  color: white;
+  font-weight: 600;
+  cursor: default;
+}
 
 
 
