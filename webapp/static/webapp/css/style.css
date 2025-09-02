@@ -629,7 +629,7 @@ header {
 
 /* -------- Категории товаров -------- */
 .categories-section {
-    padding-top: 3rem;
+    padding-top: 2rem;
     padding-bottom: 30px;
     background-color: #f1efdd;
     text-align: center;
@@ -650,7 +650,7 @@ header {
 .category-card {
     width: 85px;
     height: 90px;
-    border-radius: 7px;
+    border-radius: 10px;
     padding: 2rem;
     background: #ebebeb;
     box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.8), inset -5px -5px 10px rgba(230, 57, 70, 0.15), 0 0 15px rgb(233 233 233);
@@ -1088,11 +1088,11 @@ header {
 }
 
 .r-prev-btn {
-  left: 12px;
+  left: 4px;
 }
 
 .r-next-btn {
-  right: 12px;
+  right: 4px;
 }
 
 /* 3D прокрутка слайдов */
