@@ -24,8 +24,11 @@
 <header class="header">
     <div class="container header__container">
         <div class="logo">
-            <img src="{% static 'webapp/img/logo_nat_nbg.png' %}" alt="NATTA PG Логотип"/>
+            <a href="{% url 'index' %}" aria-label="Перейти на главную страницу">
+                <img src="{% static 'webapp/img/logo_nat_nbg.png' %}" alt="NATTA PG Логотип"/>
+            </a>
         </div>
+
 
         <!-- Бургер чекбокс -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
@@ -68,10 +71,10 @@
                 <img src="{% static 'webapp/img/logo_nat_nbg.png' %}" alt="NATTA PG Логотип"/>
             </div>
             <ul class="nav__list">
-                <li><a href="#" class="nav__link active"><i class="fas fa-flag"></i> Главная</a></li>
+                <li><a href="{% url 'index' %}" class="nav__link active"><i class="fas fa-flag"></i> Главная</a></li>
                 <li><a href="#products" class="nav__link"><i class="fas fa-shopping-bag"></i> Продукция</a></li>
-                <li><a href="#about" class="nav__link"><i class="fas fa-info-circle"></i> О нас</a></li>
-                <li><a href="#contacts" class="nav__link"><i class="fas fa-globe"></i> Контакты</a></li>
+                <li><a href="{% url 'about' %}" class="nav__link"><i class="fas fa-info-circle"></i> О нас</a></li>
+                <li><a href="{% url 'contacts' %}" class="nav__link"><i class="fas fa-globe"></i> Контакты</a></li>
                 <li><a href="#news" class="nav__link"><i class="fas fa-newspaper"></i> Новости</a></li>
             </ul>
 
