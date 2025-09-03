@@ -18,3 +18,15 @@ def contacts(request):
     """contacts page"""
 
     return render(request, 'webapp/contacts.html')
+
+
+def products(request):
+    """all products page"""
+
+    return render(request, 'webapp/products.html')
+
+
+def news(request):
+    """All News page"""
+
+    return render(request, 'webapp/news.html')

@@ -1,0 +1,23 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Фон -->
+  <rect width="400" height="300" fill="#e6f0f3"/>
+
+  <!-- Плавные линии (символизируют инновации) -->
+  <path d="M0 150 Q100 100 200 150 T400 150" stroke="#1b3e3d" stroke-width="4" fill="none" />
+  <path d="M0 170 Q100 130 200 170 T400 170" stroke="#74b49b" stroke-width="2" fill="none" />
+
+  <!-- Стилизация здания / завода -->
+  <rect x="50" y="110" width="60" height="100" fill="#1b3e3d" />
+  <rect x="120" y="140" width="40" height="70" fill="#274c4a" />
+  <rect x="170" y="100" width="80" height="110" fill="#417d7a" />
+
+  <!-- Логотип (заглушка) -->
+  <circle cx="300" cy="150" r="50" fill="#ff6600"/>
+  <text x="300" y="160" font-family="Arial" font-size="20" fill="white" text-anchor="middle" font-weight="bold">
+    NATTA PG
+  </text>
+
+  <!-- Символы качества (щит) -->
+  <path d="M350 180 L370 180 L360 140 Z" fill="#1b3e3d" />
+  <circle cx="360" cy="160" r="8" fill="#74b49b"/>
+</svg>

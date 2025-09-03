@@ -72,10 +72,10 @@
             </div>
             <ul class="nav__list">
                 <li><a href="{% url 'index' %}" class="nav__link active"><i class="fas fa-flag"></i> Главная</a></li>
-                <li><a href="#products" class="nav__link"><i class="fas fa-shopping-bag"></i> Продукция</a></li>
+                <li><a href="{% url 'products' %}" class="nav__link"><i class="fas fa-shopping-bag"></i> Продукция</a></li>
                 <li><a href="{% url 'about' %}" class="nav__link"><i class="fas fa-info-circle"></i> О нас</a></li>
                 <li><a href="{% url 'contacts' %}" class="nav__link"><i class="fas fa-globe"></i> Контакты</a></li>
-                <li><a href="#news" class="nav__link"><i class="fas fa-newspaper"></i> Новости</a></li>
+                <li><a href="{% url 'news' %}" class="nav__link"><i class="fas fa-newspaper"></i> Новости</a></li>
             </ul>
 
             <a href="tel:+74951234567" class="call-button call-button--menu">Заказать звонок</a>
@@ -91,7 +91,7 @@
     <div class="container footer__container">
         <!-- Логотип -->
         <div class="footer-logo">
-            <a href="/">
+            <a href="{% url 'index' %}">
                 <img src="{% static 'webapp/img/logo_nat_nbg.png' %}" alt="Пластик групп Логотип"/>
             </a>
         </div>
@@ -104,11 +104,11 @@
         <!-- Основное меню -->
         <nav class="footer-nav">
             <ul>
-                <li><a href="#" class="footer-link"><i class="fas fa-flag"></i> Главная</a></li>
-                <li><a href="#products" class="footer-link"><i class="fas fa-shopping-bag"></i> Продукция</a></li>
-                <li><a href="#about" class="footer-link"><i class="fas fa-info-circle"></i> О компании</a></li>
-                <li><a href="#contacts" class="footer-link"><i class="fas fa-phone"></i> Контакты</a></li>
-                <li><a href="#news" class="footer-link"><i class="fas fa-newspaper"></i> Новости</a></li>
+                <li><a href="{% url 'index' %}" class="footer-link"><i class="fas fa-flag"></i> Главная</a></li>
+                <li><a href="{% url 'products' %}" class="footer-link"><i class="fas fa-shopping-bag"></i> Продукция</a></li>
+                <li><a href="{% url 'about' %}" class="footer-link"><i class="fas fa-info-circle"></i> О компании</a></li>
+                <li><a href="{% url 'contacts' %}" class="footer-link"><i class="fas fa-phone"></i> Контакты</a></li>
+                <li><a href="{% url 'news' %}" class="footer-link"><i class="fas fa-newspaper"></i> Новости</a></li>
             </ul>
         </nav>
 

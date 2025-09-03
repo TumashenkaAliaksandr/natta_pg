@@ -2,13 +2,28 @@
 {% load static %}
 
 {% block content %}
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            {% block breadcrumbs %}
-                <li class="breadcrumb-item"><a href="/">Главная</a></li>
-                <li class="breadcrumb-item active">О компании</li>
-            {% endblock %}
-        </ol>
-    </nav>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        {% block breadcrumbs %}
+            <li class="breadcrumb-item"><a href="/">Главная</a></li>
+            <li class="breadcrumb-item active" aria-current="page">О компании</li>
+        {% endblock %}
+    </ol>
+</nav>
 
+<section class="about-company">
+    <div class="container-main">
+        <h1 class="about-title">О компании NATTA PG</h1>
+        <p class="about-text">
+            Компания NATTA PG – лидер в сфере производства качественных продуктов и решений для промышленности. Мы стремимся предлагать инновационные продукты с максимальной надежностью и устойчивостью к различным условиям эксплуатации.
+        </p>
+        <p class="about-text">
+            Наша миссия — обеспечивать клиентов высококлассными решениями для их успеха и безопасности. Мы гордимся долгосрочными партнерствами и постоянным совершенствованием технологий.
+        </p>
+        <img src="{% static 'webapp/svg/natta.svg' %}" alt="Офис компании NATTA PG" class="about-image" />
+        <p class="about-text">
+            Наш офис и производственные мощности расположены в комфортном и экологически чистом районе. Приглашаем вас стать частью нашей истории и доверять качеству NATTA PG.
+        </p>
+    </div>
+</section>
 {% endblock %}

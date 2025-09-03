@@ -8,6 +8,8 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
     path('contacts/', views.contacts, name='contacts'),
+    path('products/', views.products, name='products'),
+    path('news/', views.news, name='news'),
 ]
 
 if settings.DEBUG:

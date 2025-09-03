@@ -173,6 +173,78 @@ header {
     position: relative;
 }
 
+/* Блок о компании */
+.about-company {
+  padding: 40px 0;
+  color: #333333;
+    filter: drop-shadow(2px 1px 0px rgba(255, 255, 255, 0.50));
+}
+
+.about-title {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  color: #222222;
+}
+
+.about-text {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 850px;
+  margin: 0 auto 20px;
+  text-align: justify;
+    filter: drop-shadow(2px 1px 0px rgba(255, 255, 255, 0.50));
+}
+
+.about-image {
+  display: block;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  margin: 30px auto 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 1.9rem;
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    max-width: 100%;
+    margin: 0 15px 15px;
+  }
+
+  .about-image {
+    max-width: 100%;
+    margin: 25px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumb {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+
+  .about-title {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .about-text {
+    font-size: 0.9rem;
+    margin: 0 10px 12px;
+    line-height: 1.4;
+  }
+}
+
+
 /*@keyframes slowFireGlow {*/
 /*    0%, 100% {*/
 /*        filter:*/

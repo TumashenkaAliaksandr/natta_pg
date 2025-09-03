@@ -3,6 +3,14 @@
 
 {% block content %}
 
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            {% block breadcrumbs %}
+                <li class="breadcrumb-item">404</li>
+            {% endblock %}
+        </ol>
+    </nav>
+
     <h2 class="section-title">404 Страница не найдена!</h2>
     
 {% endblock %}
