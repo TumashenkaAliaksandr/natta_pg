@@ -2,5 +2,13 @@
 {% load static %}
 
 {% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            {% block breadcrumbs %}
+                <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                <li class="breadcrumb-item active">Новости</li>
+            {% endblock %}
+        </ol>
+    </nav>
 
 {% endblock %}

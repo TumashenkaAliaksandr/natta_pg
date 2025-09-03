@@ -98,6 +98,32 @@ header {
 }
 
 
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem 1rem;
+  list-style: none;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  padding: 0 0.5rem;
+  color: #6c757d;
+}
+
+.breadcrumb-item a {
+  color: #371114;
+  text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+    margin-left: 10px;
+}
+
+
 .contact-item {
   display: flex;
   align-items: center;
@@ -672,14 +698,14 @@ header {
     height: 55px;
     margin-bottom: 0.8rem;
     fill: #e63946;
-    filter: drop-shadow(2px 1px 0px rgba(255, 255, 255, 0.50));
+    filter: drop-shadow(2px 1px 0px rgba(255, 255, 255, 0.98));
 }
 
 .category-name {
     font-weight: 600;
     color: #2e1b18;
     font-size: 14px;
-    filter: drop-shadow(2px 1px 0px rgba(255, 255, 255, 0.50));
+    filter: drop-shadow(2px 1px 0px rgba(255, 255, 255, 0.70));
 }
 
 
