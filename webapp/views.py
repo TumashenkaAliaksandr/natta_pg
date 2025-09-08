@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
+from webapp.models import Product
+
 
 # Create your views here.
 
@@ -24,6 +27,12 @@ def products(request):
     """all products page"""
 
     return render(request, 'webapp/products.html')
+
+
+def product_detail(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    return render(request, 'single_product.html', {'product': product})
+
 
 
 def news(request):

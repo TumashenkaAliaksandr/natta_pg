@@ -1656,3 +1656,146 @@ header {
         justify-content: center;
     }
 }
+
+/* Десктоп */
+.product-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: nowrap;
+}
+
+.left-column {
+    flex: 1;
+    max-width: 50%;
+}
+
+.main-photo {
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.additional-photos {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.additional-photo {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.additional-photo:hover {
+    transform: scale(1.1);
+    border-color: #000;
+}
+
+.right-column {
+    flex: 1;
+    max-width: 50%;
+}
+
+.right-column h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.attributes-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1em;
+}
+
+.attributes-list li {
+    margin-bottom: 10px;
+}
+
+.product-description {
+    margin-top: 30px;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+/* Popup */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    position: relative;
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+#popup-image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 6px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#popup-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .left-column, .right-column {
+        max-width: 100%;
+    }
+
+    .additional-photos {
+        justify-content: center;
+    }
+
+    .additional-photo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .right-column h1 {
+        font-size: 1.5em;
+    }
+
+    .attributes-list {
+        font-size: 1em;
+    }
+
+    .product-description {
+        font-size: 1em;
+        margin-top: 20px;
+    }
+}

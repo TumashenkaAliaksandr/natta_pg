@@ -2,13 +2,50 @@
 {% load static %}
 
 {% block content %}
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            {% block breadcrumbs %}
-                <li class="breadcrumb-item"><a href="/">Главная</a></li>
-                <li class="breadcrumb-item active">Товар</li>
-            {% endblock %}
-        </ol>
-    </nav>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        {% block breadcrumbs %}
+            <li class="breadcrumb-item"><a href="/">Главная</a></li>
+            <li class="breadcrumb-item active">{{ product.name }}</li>
+        {% endblock %}
+    </ol>
+</nav>
+
+<div class="product-container">
+    <div class="left-column">
+        <img id="main-photo" src="{{ product.main_photo.url }}" alt="{{ product.name }}" class="main-photo" />
+        {% if product.additional_photos.all %}
+        <div class="additional-photos">
+            {% for photo in product.additional_photos.all %}
+                <img src="{{ photo.photo.url }}" alt="Доп. фото {{ forloop.counter }}" class="additional-photo" />
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    <div class="right-column">
+        <h1>{{ product.name }}</h1>
+        <ul class="attributes-list">
+            <li><strong>Цена:</strong> {{ product.price }} ₽</li>
+            {% if product.attributes %}<li><strong>Атрибуты:</strong> {{ product.attributes }}</li>{% endif %}
+            {% if product.weight %}<li><strong>Вес:</strong> {{ product.weight }} кг</li>{% endif %}
+            {% if product.size %}<li><strong>Размер:</strong> {{ product.size }}</li>{% endif %}
+            {% if product.color %}<li><strong>Цвет:</strong> {{ product.color }}</li>{% endif %}
+        </ul>
+    </div>
+</div>
+
+<div class="product-description">
+    <h2>Описание</h2>
+    <p>{{ product.description|linebreaks }}</p>
+</div>
+
+<!-- Popup для главного фото -->
+<div id="popup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <span id="popup-close">&times;</span>
+        <img id="popup-image" src="#" alt="Просмотр фото" />
+    </div>
+</div>
+
 
 {% endblock %}
