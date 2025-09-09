@@ -7,8 +7,9 @@ from webapp.models import Product
 
 def index(request):
     """main page"""
+    products = Product.objects.all()
 
-    return render(request, 'webapp/index.html')
+    return render(request, 'webapp/index.html', {'products': products})
 
 
 def about(request):
@@ -29,9 +30,10 @@ def products(request):
     return render(request, 'webapp/products.html')
 
 
-def product_detail(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    return render(request, 'single_product.html', {'product': product})
+def product_detail(request, slug):
+    product = get_object_or_404(Product, slug=slug)
+
+    return render(request, 'webapp/single_product.html', {'product': product})
 
 
 
